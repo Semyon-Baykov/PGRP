@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\PC\PC_mouse"
+	$color2 "[ 0.15 0.15 0.15 ]"
+}

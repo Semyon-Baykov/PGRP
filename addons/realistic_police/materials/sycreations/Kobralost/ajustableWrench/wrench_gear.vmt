@@ -1,0 +1,19 @@
+"VertexlitGeneric"
+{
+
+	"$basetexture" "sycreations/commons/white"
+	$color2 "[ 0.25 0.25 0.25 ]"
+	$bumpmap "sycreations/kobralost/ajustableWrench/wrench_gear_normal"
+
+	"$envmap" "env_cubemap"					
+	"$envmaptint" "[ .5 0.5 0.5 ]"
+	"$envmapFresnel" "1"
+
+	"$phong" "1"						
+	"$phongexponent" 40
+	"$phongboost" "3"						
+	"$phongfresnelranges"	"[0.5 0.75 1]"
+	$rimlight 1
+	$rimlightboost 20
+	$rimlightexponent 5
+}

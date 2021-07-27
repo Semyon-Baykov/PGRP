@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/jesus/jesushalo_d"
+	$envmap "env_cubemap"
+}

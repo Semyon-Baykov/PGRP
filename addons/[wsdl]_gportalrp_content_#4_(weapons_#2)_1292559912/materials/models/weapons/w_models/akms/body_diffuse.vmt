@@ -1,0 +1,16 @@
+"Vertexlitgeneric"
+{
+
+
+	"$basetexture"                	"models\weapons\v_models\AKMS\Body_diffuse"
+	"$bumpmap"                    	"models\weapons\v_models\AKMS\Body_normal"
+	"$color2"			"[0.8 0.8 0.8]"
+
+	$phong                      	1
+	$phongboost                 	12
+	$phongfresnelranges         	"[5 10 10]"
+	"$phongalbedotint"		"1"
+	"$phongalbedoboost" 		"56"
+	$phongexponenttexture       	"models\weapons\v_models\AKMS\Body_exponent"
+	$normalmapalphaphongmask    	1
+}

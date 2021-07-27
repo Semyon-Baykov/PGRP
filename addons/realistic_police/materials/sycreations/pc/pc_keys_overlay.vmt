@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\PC\PC_keys_overlay"
+	//$alphatest 1
+	$translucent 1
+	
+	$phong 0
+	$phongexponent 30
+	$phongboost 8
+	$phongfresnelranges "[0 0.75 1]"
+	$basemapluminancephongmask	1
+
+}

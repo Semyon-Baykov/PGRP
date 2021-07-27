@@ -1,0 +1,20 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/russian_cars/generic/tire_3"
+	"$bumpmap" "models/lonewolfiescars/russian_cars/generic/tire_3_nm"
+	"$normalmapalphaenvmapmask" 1
+	"$phong" "1"
+	"$phongexponent" "2"
+	"$phongboost" "0.01"	
+	"$phongfresnelranges"	"[.4 .7 1]"
+	"$nodecal" "1"
+	"$colorfix" "{255 255 255}"
+	"Proxies"
+	{
+		"Equals"
+		{
+			srcVar1 $colorfix
+			resultVar	$color
+		}
+	}
+}

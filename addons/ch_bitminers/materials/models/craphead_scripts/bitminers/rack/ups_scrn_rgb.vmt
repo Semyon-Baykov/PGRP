@@ -1,0 +1,34 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/craphead_scripts/bitminers/rack/rainbow"
+    "$detail" "models/craphead_scripts/bitminers/rack/ups_scrn_text"
+    "$detailscale" "1"
+    "$detailblendmode" "8"
+    "$detailblendfactor" "1"
+
+        "$angle" 0
+        "$translate" "[0 0]"
+        "$center" "[.5 .5]"
+		"$scale" "[.01 .01]"	
+	
+        "Proxies"
+        {
+			
+			"LinearRamp"
+            {
+                "rate" .05
+                "initialValue" 0
+                "resultVar" "$translate"
+            }
+			
+			
+            "TextureTransform"
+            {
+                "translateVar" "$translate"
+                "rotateVar" "$angle"
+                "centerVar" "$center"
+				"scaleVar" 	"$scale"
+                "resultVar" "$basetexturetransform"
+            }			
+        }	
+}

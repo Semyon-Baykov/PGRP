@@ -1,0 +1,10 @@
+"UnlitGeneric"
+{
+	"$basetexture" "ricardo"
+	$translucent 1
+	$vertexcolor 1
+	$vertexalpha 1
+	$additive 0
+	$alpha 1
+		
+}

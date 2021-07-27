@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "concrete/concrete_modular_wall3"
+	"$surfaceprop" "Concrete"
+}

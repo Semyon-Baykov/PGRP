@@ -1,0 +1,6 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\commons\white"
+	$color2 "[ 0.2 0.2 0.2 ]"
+
+}

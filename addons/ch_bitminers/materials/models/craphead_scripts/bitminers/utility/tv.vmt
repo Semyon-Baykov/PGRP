@@ -1,0 +1,14 @@
+VertexLitGeneric
+{
+	$basetexture			"models/craphead_scripts/bitminers/utility/tv_albedo"
+	$bumpmap				"models/craphead_scripts/bitminers/utility/tv_normal"
+	
+	$phong					1
+	$phongexponent			64
+	$phongboost				1
+	$phongfresnelranges		"[1 0.3 0.1]"
+	$phongtint				"[1 1 1]"
+	
+//	$rimlight				1
+//	$rimlightboost			0.131
+}

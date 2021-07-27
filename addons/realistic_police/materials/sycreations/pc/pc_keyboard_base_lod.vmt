@@ -1,0 +1,6 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\PC\PC_keyboard_base"
+	$color2 "[ 0.3 0.3 0.3 ]"
+
+}

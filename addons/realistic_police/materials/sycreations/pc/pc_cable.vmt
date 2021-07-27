@@ -1,0 +1,11 @@
+VertexLitGeneric
+{
+	$basetexure "sycreations\commons\white"
+	$color2 "[ 0.2 0.2 0.2 ]"
+	
+	$phong 1
+	$phongexponent 30
+	$phongboost 8
+	$phongfresnelranges "[0 0.75 1]"
+	$basemapalphaphongmask	1
+}

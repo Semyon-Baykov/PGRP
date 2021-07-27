@@ -1,0 +1,24 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/realistic_police/taser/taser"
+	"$bumpmap" 	   "models/realistic_police/taser/taser_n"
+
+
+	"$halflambert" "1"
+	"$phong" "1"
+	"$phongboost" "1"
+	"$phongexponent" "7"
+	"$phongfresnelranges" "[1 2 7]"
+	
+	
+	"$envmap" "env_cubemap"
+	"$envmapsaturation" ".5"
+	"$envmapcontrast" "1"
+	"$envmapfresnel" ".25"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.05 .05 .05]"		
+
+	"$rimlight" "1"
+	"$rimlightexponent" "10"
+	"$rimlightboost" ".25"	
+}

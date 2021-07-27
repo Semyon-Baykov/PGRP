@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "metal/metalwall-blackwhite"
+	"$envmapsaturation" "[.2 .1 1]"
+	"$envmaptint" "[.3 .3 .3]"
+	"$surfaceprop" "Metal"
+}

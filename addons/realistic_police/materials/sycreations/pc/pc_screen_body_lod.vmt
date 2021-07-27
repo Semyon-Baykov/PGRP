@@ -1,0 +1,10 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\PC\PC_screen_body"
+	//$bumpmap "sycreations\PC\PC_key_side_normal"
+	$color2 "[ 0.15 0.15 0.15 ]"
+	$envmap env_cubemap
+	$envmaptint "[ 0.2 0.2 0.2 ]"
+	$envmapfresnel 1
+
+}

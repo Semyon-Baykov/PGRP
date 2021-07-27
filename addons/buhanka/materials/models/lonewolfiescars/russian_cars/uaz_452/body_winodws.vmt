@@ -1,0 +1,24 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/russian_cars/uaz_452/body_winodws"
+	"$bumpmap" "models/lonewolfiescars/russian_cars/uaz_452/nodamage_bump"
+	"$nodecal" "1"
+	"$halflambert" 1
+	"$phong" "1" 
+	"$phongboost" "0.2" 
+	"$phongfresnelranges" "[.3 .5 1]" 
+	"$phongexponent" 180
+	"$rimlight" "1"
+	"$rimlightexponent" "10"
+	"$rimlightboost" ".1"
+	"$rimmask" "1"
+	"$colorfix" "{255 255 255}"
+	"Proxies"
+	{
+		"Equals"
+		{
+			srcVar1 $colorfix
+			resultVar	$color
+		}
+	}
+}

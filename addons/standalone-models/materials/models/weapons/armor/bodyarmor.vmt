@@ -1,0 +1,7 @@
+VertexLitGeneric
+{
+	$basetexture "models/weapons/armor/BodyArmor"
+	$bumpmap "models/weapons/armor/BodyArmor_Normal"
+	$model 1
+	$nocull 1
+}

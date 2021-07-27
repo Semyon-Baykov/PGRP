@@ -1,0 +1,6 @@
+Fading Doors
+============
+
+I finally got around to GM13ifying my Fading Doors addon and ended up rewriting it into a module.
+Go figure.
+AFAIK this all works - so you're free to use it - but I'm not gonna put it on the workshop until I finish the keypads.

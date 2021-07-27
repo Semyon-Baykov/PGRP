@@ -1,0 +1,30 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/russian_cars/generic/rim_3"
+	"$bumpmap" "models/lonewolfiescars/shared/skin_nm"
+
+	"$normalmapalphaenvmapmask" 1
+	"$nocull" "1"
+	"$nodecal" "1"
+
+	"$phong" "1"
+	"$phongexponent" "4"
+	"$phongboost" "0.1"	
+	"$phongfresnelranges"	"[.4 .7 1]"
+
+    	$envmap "env_cubemap"
+    	$envmaptint "[0.08 0.08 0.08]"
+    	$envmapcontrast "1"
+    	$envmapsaturation "1"
+    	$envmapfresnel "1"
+
+	"$colorfix" "{255 255 255}"
+	"Proxies"
+	{
+		"Equals"
+		{
+			srcVar1 $colorfix
+			resultVar	$color
+		}
+	}
+}

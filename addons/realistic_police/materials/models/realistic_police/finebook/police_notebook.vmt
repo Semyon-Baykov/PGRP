@@ -1,0 +1,23 @@
+"Vertexlitgeneric"
+{
+	"$basetexture" 				"models/realistic_police/finebook/police_notebook"
+	"$bumpmap" 				"models/realistic_police/finebook/police_notebook_n"
+
+	"$halflambert" "1"
+	"$phong" "1"
+	"$phongboost" "1"
+	"$phongexponent" "15"
+	"$phongfresnelranges" "[2 4 8]"
+	
+	
+	"$envmap" "env_cubemap"
+	"$envmapsaturation" ".5"
+	"$envmapcontrast" "1"
+	"$envmapfresnel" ".25"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.05 .05 .05]"		
+
+	"$rimlight" "1"
+	"$rimlightexponent" "10"
+	"$rimlightboost" ".25"
+}

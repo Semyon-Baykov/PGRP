@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\PC\PC_key_side"
+	$bumpmap "sycreations\PC\PC_key_side_normal"
+	$color2 "[ 0.2 0.2 0.2 ]"
+	
+	$phong 1
+	$phongexponent 10
+	$phongboost 10
+	$phongfresnelranges "[0 0.5 0.1]"
+	//$basemapalphaphongmask	1
+
+}

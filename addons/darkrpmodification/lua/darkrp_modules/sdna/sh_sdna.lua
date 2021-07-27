@@ -1,0 +1,1 @@
+SDNA = SDNA or {}

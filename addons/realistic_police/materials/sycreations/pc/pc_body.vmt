@@ -1,0 +1,18 @@
+"VertexlitGeneric"
+{
+	$basetexture "sycreations\PC\PC_tower_shaded"
+	
+	$bumpmap "sycreations\PC\PC_tower_normal"
+	$envmap env_cubemap
+	$envmaptint "[ 0.02 0.02 0.02 ]"
+	$envmapfresnel 0.5
+	
+	
+	$phong 1
+	$phongexponent 40
+	$phongboost 8
+
+	$phongfresnelranges "[0.1 0.75 1]"
+	//$basemapalphaphongmask 1
+}
+	

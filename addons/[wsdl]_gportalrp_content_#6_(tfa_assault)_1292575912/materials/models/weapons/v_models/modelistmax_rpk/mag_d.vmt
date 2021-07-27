@@ -1,0 +1,14 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models\weapons\v_models\modelistmax_rpk\mag_d"
+	"$bumpmap" "models\weapons\v_models\modelistmax_rpk\mag_n"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmaptint" "[.1 .1 .1]"
+	"$envmapcontrast" .7
+	"$phong" 1
+	"$phongboost" 1
+	"$phongexponenttexture" "models\weapons\v_models\modelistmax_rpk\mag_g"
+	"$phongfresnelranges" "[.2 1 0]"
+//	"$phongalbedotint" 1
+}

@@ -1,0 +1,15 @@
+VertexLitGeneric
+{
+	$basetexture "sycreations\PC\PC_mouse"
+	$bumpmap "sycreations\PC\PC_mouse_normal"
+	$color2 "[ 0.15 0.15 0.15 ]"
+	
+	$phong 1
+	$phongexponent 5
+	$phongboost 0.4
+	$phongfresnelranges "[0.25 0.75 1]"
+	//$basemapluminancephongmask	1
+	//$basemapalphaphongmask 1
+	
+
+}

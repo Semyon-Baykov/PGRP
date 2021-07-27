@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\weapons\v_models\Vityaz\mp5_d"
+	"$bumpmap" "models\weapons\v_models\Vityaz\mp5_n"
+	"$nocull" "1"
+
+	"$phong"			"1"
+	"$phongexponent"		"35"
+	"$phongboost"		"1"
+	"$phongtint"		"[0.6 0.8 1]"
+	"$phongfresnelranges"	"[1 6 3]"
+	"$phongalbedotint"		"1"
+	"$halflambert"		"1"
+}

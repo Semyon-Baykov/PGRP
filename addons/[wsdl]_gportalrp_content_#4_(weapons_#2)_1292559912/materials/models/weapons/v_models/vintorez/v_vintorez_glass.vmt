@@ -1,0 +1,19 @@
+"VertexLitGeneric"
+{
+	"$basetexture" 	"models\Weapons\v_Models\vintorez\v_vintorez_pso"
+	"$bumpmap" 	"models\Weapons\v_Models\vintorez\v_vintorez_pso_normal"
+	"$envmap" 	"env_cubemap"
+
+	"$normalmapalphaenvmapmask" "1"
+	
+	"$envmaptint"		"[0.08 0.08 0.08]"
+	"$phong" 		"1"
+	"$phongexponent" 	"75"
+	"$phongboost"		"1"
+	"$phongfresnelranges"	"[1 4 5]"
+	"$phongalbedotint" 	"1"
+	"$halflambert" 		"1"
+}
+
+//Soldier11 created these shaders. You may not re-use them without his permission!
+

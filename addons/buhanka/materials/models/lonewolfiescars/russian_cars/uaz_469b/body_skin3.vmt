@@ -1,0 +1,27 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/russian_cars/uaz_469b/body_skin1"
+	"$bumpmap" "models/lonewolfiescars/russian_cars/uaz_469b/body_nm"
+
+	"$nodecal" "1"
+	"$halflambert" 1
+	"$blendtintbybasealpha" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "5"
+	"$rimlightboost" ".1"
+	"$rimmask" "1"
+
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[0.002 0.002 0.002]"
+	"$envmapfresnel" "1"
+
+	"$phong" "1" 
+	"$phongboost" "0.05" 
+	"$phongexponent" 2
+	"$phongfresnelranges" "[0.2 1 3]" 
+
+
+}
+
+

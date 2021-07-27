@@ -1,0 +1,5 @@
+"vertexLitGeneric"
+{
+	"$basetexture" "models/weapons/at4/uslat_at4_c"
+	"$bumpmap" "models\weapons\at4\uslat_at4_b"
+}

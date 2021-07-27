@@ -1,0 +1,21 @@
+//VMT written by 4Echo for Kopter
+"Vertexlitgeneric"
+{
+
+
+	$basetexture                "models\weapons\v_models\Kiparis\sec_diffuse"
+	$bumpmap                    "models\weapons\v_models\Kiparis\sec_normal"
+
+	$phongexponenttexture       "models\weapons\v_models\Kiparis\sec_gloss"
+	"$nocull"	"1"
+
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.1 .1 .1]"
+	"$envmapcontrast" ".4"
+	
+	"$phong" 	"1"
+	"$phongexponent" 	"10"
+	"$phongboost"	 "1"
+	"$phongfresnelranges" "[1 2 4]"
+
+}
