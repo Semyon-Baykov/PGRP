@@ -9,7 +9,7 @@ end
 
 function meta:gp_IsAdmin()
 
-	return self:GetUserGroup() == 'admin' or self:GetUserGroup() == 'admin+' or self:GetUserGroup() == 'donsuperadmin' or self:GetUserGroup() == 'owner' or self:GetUserGroup() == 'superadmin' or self:GetUserGroup() == 'sponsor+' or self:GetUserGroup() == 'nab_moder-' or self:GetUserGroup() == 'nab_moder+' or self:GetUserGroup() == 'nab_admin'
+	return self:GetUserGroup() == 'moder' or self:GetUserGroup() == 'admin' or self:GetUserGroup() == 'admin+' or self:GetUserGroup() == 'donsuperadmin' or self:GetUserGroup() == 'owner' or self:GetUserGroup() == 'superadmin' or self:GetUserGroup() == 'sponsor+' or self:GetUserGroup() == 'nab_moder-' or self:GetUserGroup() == 'nab_moder+' or self:GetUserGroup() == 'nab_admin'
 
 end
 
