@@ -21,4 +21,4 @@ ENT.pName = 'Ruby Printer'
 ENT.pColor = Color(209, 0, 86, 255)
 
 --> Defaults
-ENT.pQuality = 475
+ENT.pQuality = 315

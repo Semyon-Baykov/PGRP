@@ -21,4 +21,4 @@ ENT.pName = 'Amber Printer'
 ENT.pColor = Color(255, 126, 0, 255)
 
 --> Defaults
-ENT.pQuality = 175
+ENT.pQuality = 155

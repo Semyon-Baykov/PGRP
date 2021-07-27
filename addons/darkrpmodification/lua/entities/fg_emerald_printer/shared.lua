@@ -21,4 +21,4 @@ ENT.pName = 'Emerald Printer'
 ENT.pColor = Color(80, 200, 120, 255)
 
 --> Defaults
-ENT.pQuality = 575
+ENT.pQuality = 400
