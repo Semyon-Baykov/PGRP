@@ -1,6 +1,15 @@
 util.AddNetworkString( 'gp_c4' )
 
 local meta = FindMetaTable( 'Entity' )
+local props_to_delete = {}
+
+local function delete_exploded_props()
+	timer.Simple(30, function()
+		for k, v in ipairs( props_to_delete ) do
+			v:Remove()
+		end
+	end)
+end
 
 function meta:OpenC4Menu( activator )
 
@@ -88,9 +97,12 @@ function meta:C4_Explode( activator )
 			constraint.RemoveAll( v )
 			local PhysObj = v:GetPhysicsObject()
 			PhysObj:EnableMotion(true)
+			table.append(props_to_delete, v)
 		end
 
 	end
+	
+	delete_exploded_props()
 	
 	-- Boom!
 	self:EmitSound( 'siege/big_explosion.wav', 100, 100 )
