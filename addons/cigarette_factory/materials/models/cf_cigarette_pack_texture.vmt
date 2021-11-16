@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/cf_cigarette_pack_texture"
+	"$model" 1
+}

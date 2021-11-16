@@ -1,4 +1,4 @@
-resource.AddFile("materials/newcity/atm.png")
+resource.AddFile("materials/newcity/empty_space.png")
 
 resource.AddFile("models/props_unique/atm01.mdl")
 resource.AddSingleFile("models/props_unique/atm01.dx80.vtx")
@@ -12,6 +12,7 @@ resource.AddFile("materials/models/props_unique/atm.vmt")
 resource.AddSingleFile("materials/models/props_unique/atm.vmt")
 resource.AddSingleFile("materials/models/props_unique/atm.vtf")
 resource.AddSingleFile("materials/models/props_unique/atm_ref.vtf")
+resource.AddSingleFile("materials/newcity/empty_space.png")
 
 BraxBank = {}
 

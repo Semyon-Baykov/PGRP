@@ -18,7 +18,7 @@
 		gm-donate.ru/support  -->  Быстрая помощь и настройка от нас
 		gm-donate.ru/mods     -->  Бесплатные модули
 -------------------------------------------------------------------------]]--
-IGS("500 тысяч валюты", "500k", 200):SetDarkRPMoney(500000) :SetIcon("https://i.imgur.com/E2a0qxB.jpg")
+IGS("500 тысяч валюты", "500k", 200):SetDarkRPMoney(500000) :SetIcon("https://i.imgur.com/E2a0qxB.jpg") 
 IGS("1 миллион валюты", "1m", 300):SetDarkRPMoney(1000000) :SetIcon("https://i.imgur.com/F2TpSY6.jpg")
 IGS("2 миллиона валюты", "2m", 450):SetDarkRPMoney(2000000) :SetIcon("https://i.imgur.com/sLWmZs7.jpg")
 IGS("5 миллионов валюты", "5m", 600):SetDarkRPMoney(5000000) :SetIcon("https://i.imgur.com/uayp2UH.jpg")
@@ -28,7 +28,7 @@ IGS("15 миллионов валюты", "15m", 1100):SetDarkRPMoney(15000000) 
 
 -- Premium
 local prem_desc = [[
--=-=-=- Премиум активируется автоматически после активации в донат инвениаре! -=-=-=-
+-=-=-=- Премиум активируется автоматически после активации в донат инвентаре! -=-=-=-
 
 Привилегия премиум даёт бонус к вашей игре и разрешает вам тратить меньше денег, времени, и усилий.
 
@@ -41,18 +41,27 @@ local prem_desc = [[
 • Наркобарон получает на 10% больше денег от продажи мета
 • Мер получает процентики от лотереи
 
--=-=-=- Премиум активируется автоматически после активации в донат инвениаре! -=-=-=-
+-=-=-=- Премиум активируется автоматически после активации в донат инвентаре! -=-=-=-
 ]]
 local prem_icon = "https://i.imgur.com/6I0Hdaq.jpg"	--:SetULXCommandAccess("ulx premium", "^")
+local function premium_activate (ply)
+	-- Give prem
+	RunConsoleCommand( "sg_adduser", ply:SteamID(), "premium" )
+	
+	-- Notify the player
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вы активировали премиум подписку!' )	
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Возможно вам нужно перезайти на сервер что-бы премиум полностью заработал!' )
+	
+	-- Notify everyone
+	for k, v in ipairs( ents.FindByClass("player") ) do 
+		v:ChatAddText( Color( 139, 50, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), ply:Nick(), ' приобрёл премиум подписку!' )
+		v:ChatAddText( Color( 139, 50, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вам было начислено 5,000₽ в подарок!' )
+		v:addMoney(5000)
+	end
+end
 
 IGS("Премиум на 15 дней", "premium15")
-	:SetOnActivate(
-		function (ply)
-			local psid = ply:SteamID()
-			RunConsoleCommand( "sg_adduser", psid, "premium" )
-			ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вы активировали премиум подписку!\nВозможно вам нужно перезайди на сервер что-бы премиум полностью заработал!' )
-		end
-	)
+	:SetOnActivate(premium_activate)
  	:SetPrice(150)
  	:SetTerm(15)
 	:SetIcon(prem_icon)
@@ -60,32 +69,24 @@ IGS("Премиум на 15 дней", "premium15")
 	:SetDescription(prem_desc)
 
 IGS("Премиум на 30 дней", "premium30")
-	:SetOnActivate(
-		function (ply)
-			local psid = ply:SteamID()
-			RunConsoleCommand( "sg_adduser", psid, "premium" )
-			ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вы активировали премиум подписку!\nВозможно вам нужно перезайди на сервер что-бы премиум полностью заработал!' )
-		end
-	)
+	:SetOnActivate(premium_activate)
  	:SetPrice(250) 
  	:SetTerm(30)
 	:SetIcon(prem_icon)
  	:SetCategory("Премиум")
 	:SetDescription(prem_desc)
 
+
 IGS("Премиум на год", "premium365")
-	:SetOnActivate(
-		function (ply)
-			local psid = ply:SteamID()
-			RunConsoleCommand( "sg_adduser", psid, "premium" )
-			ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вы активировали премиум подписку!\nВозможно вам нужно перезайди на сервер что-бы премиум полностью заработал!' )
-		end
-	)
+	:SetOnActivate(premium_activate)
  	:SetPrice(1800) 
  	:SetTerm(365)
 	:SetIcon(prem_icon)
  	:SetCategory("Премиум")
 	:SetDescription(prem_desc)
+	:SetHidden()
+
+
 
 -- Don admins
 -- Checking for price reduction:
@@ -115,12 +116,28 @@ Teleport:
 local a_desc = [[
 Помогайте игрокам, теперь у вас есть доступ к очень полезным административным командам. Чувствуйте себя как настоящий админ: теперь вы сможете летать, банить, и многое другое!
 
-Привилегия "Админ" даёт доступ ко всем командам "Модератора" и добавляет:
+Привилегия "Админ" даёт доступ ко всем следующим командам:
 Чат:
+• Mute & Unmute
 • Gag & Ungag
+Отчистка:
+• Cleanprops (отчиска всех пропов выбранного игрока)
+• Cleardecals (помогает серверу не лагать)
+• Nolag (замараживает все вещи на карте)
 Администрирование:
 • Noclip, Cloak, & Uncloak (позволяет вам летать по карте, наблюдая за игроками)
 • Kick
+• Resetname (если у кого-то нонрп имя)
+• Setjob
+• Jail, JailTP, & Unjail
+• Strip (убирает все вещи у игрока)
+• Spectate
+• Возможность поднимать игроков физганом
+Teleport:
+• Adminr (тп игрока или себя в админ комнату)
+• Bring (тп игрока к себе)
+• Goto
+• Return
 ]]
 local ap_desc = [[
 Полный комплект административных возможностей: доступ к job(ban), ban, и множеству других команд. Вы чувствуете власть?
@@ -169,9 +186,18 @@ Q-menu:
 ]]
 
 local function admin_activate (ply)
-	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вы приобрели донатную админку!\nДля начала, советуем вам прочитать правила администрации сервера!\nТеперь, вы имеете право выявлять нарушения и давать наказания игрокам!' )
+	-- Notify the player
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вы приобрели донатную админку! Для начала, советуем вам прочитать правила администрации сервера!' )
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Теперь, вы имеете право выявлять нарушения и давать наказания игрокам!' )
 	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вот полезные команды что-бы вам было легче администрировать:\n', Color( 200, 200, 200 ), 'bind l "ulx menu" -> менюшка администрации\nbind v "ulx noclip" -> полёт\nbind o "ulx cloak" -> невидимка\nbind p "ulx uncloak" -> видимка' )
 	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Удачи вам и спасибо за покупку!')
+	
+	-- Notify everyone
+	for k, v in ipairs( ents.FindByClass("player") ) do 
+		v:ChatAddText( Color( 139, 50, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), ply:Nick(), ' приобрёл админку!' )
+		v:ChatAddText( Color( 139, 50, 0 ), '[PGRP-донат] ', Color( 255, 255, 255 ), 'Вам было начислено 5,000₽ в подарок!' )
+		v:addMoney(5000)
+	end
 end
 
 IGS("Модератор", "moderator")
@@ -181,11 +207,12 @@ IGS("Модератор", "moderator")
 	:SetCategory("Группы")
 	:SetPerma()
 	:SetDescription(m_desc)
+	:SetHidden()
 	
 IGS("Админ", "admin")
 	:SetULXGroup("admin")
 	:SetOnActivate( admin_activate )
-	:SetPrice(470)
+	:SetPrice(450)
 	:SetCategory("Группы")
 	:SetPerma()
 	:SetDescription(a_desc)

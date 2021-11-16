@@ -71,15 +71,11 @@ function SWEP:PrimaryAttack()
     ent = self:GetOwner():getEyeSightHitEntity(nil, nil, function(p) return p ~= self:GetOwner() and p:IsPlayer() and p:Alive() and p:IsSolid() end)
 
     local stickRange = self.stickRange * self.stickRange
-    if not IsValid(ent) or (self:GetOwner():EyePos():DistToSqr(ent:GetPos()) > stickRange) or not ent:IsPlayer() then
-        return
-    end
-
-    local canArrest, message = hook.Call("canArrest", DarkRP.hooks, self:GetOwner(), ent)
-    if not canArrest then
-        if message then DarkRP.notify(self:GetOwner(), 1, 5, message) end
-        return
-    end
+    if not IsValid(ent) or (self:GetOwner():EyePos():DistToSqr(ent:GetPos()) > stickRange) or not ent:IsPlayer() then return end
+	if ent:Team() == TEAM_POLICE or ent:Team() == TEAM_DPS or ent:Team() == TEAM_PPS or ent:Team() == TEAM_CHIEF or ent:Team() == TEAM_MAYOR or ent:Team() == TEAM_ADMIN or ent:Team() == TEAM_NRG1 or ent:Team() == TEAM_FBI or ent:Team() == TEAM_OMON then
+		DarkRP.notify(self:GetOwner(), 1, 5, 'Вы не можете арестовать этого игрока. Его профессия находится в списке гос-работников!')
+		return
+	end
 
     --ent:arrest(nil, self:GetOwner())
     --DarkRP.notify(ent, 0, 20, DarkRP.getPhrase("youre_arrested_by", self:GetOwner():Nick()))
@@ -94,7 +90,7 @@ function SWEP:PrimaryAttack()
         DarkRP.log(self:GetOwner():Nick() .. " (" .. self:GetOwner():SteamID() .. ") arrested " .. ent:Nick(), Color(0, 255, 255))
     end
 
-	timer.Simple( 15, function() ent:UnLock() end )
+	timer.Simple( 15, function() ent:UnLock() self:GetOwner():UnLock() end )
 
 end
 

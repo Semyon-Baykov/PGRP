@@ -552,7 +552,7 @@ net.Receive("RealisticPolice:HandCuff", function(len, ply)
             ent:arrest(RPTInt, ply)--Realistic_Police.ArresPlayer(ent, RPTInt*Realistic_Police.DayEqual)
             Realistic_Police.SendNotify(ent, Realistic_Police.Lang[82][Realistic_Police.Langage].." "..ply:Name())
             Realistic_Police.SendNotify(ply, Realistic_Police.Lang[83][Realistic_Police.Langage].." "..ent:Name())
---[[
+            --[[
             -- Create The table to add on the Criminal Record
             local Table = {
                 Date = os.date("%d/%m/%Y", os.time()),
@@ -622,7 +622,10 @@ net.Receive("RealisticPolice:HandCuff", function(len, ply)
                 end 
             end 
 
-        end 
+        end
+    
+    elseif RPTString == "StopArrest" then
+        ent:UnLock()
     end 
 end )
 

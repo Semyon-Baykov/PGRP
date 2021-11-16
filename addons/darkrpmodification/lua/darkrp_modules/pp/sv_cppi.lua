@@ -53,7 +53,7 @@ end)
 
 local function isadmin( ply )
 
-	return ply:GetUserGroup() == 'donsuperadmin' or ply:GetUserGroup() == 'owner' or ply:GetUserGroup() == 'superadmin' or ply:GetUserGroup() == 'sponsor+' or ply:GetUserGroup() == 'slavaukraine' 
+	return ply:GetUserGroup() == 'donsuperadmin' or ply:GetUserGroup() == 'owner' or ply:GetUserGroup() == 'superadmin' or ply:GetUserGroup() == 'sponsor+' or ply:GetUserGroup() == 'nab_moder+' or ply:GetUserGroup() == 'nab_moder-' or ply:GetUserGroup() == 'nab_admin' or ply:GetUserGroup() == 'rukovoditel'
 
 end
 ---------------------------------------------------------------------------
@@ -62,7 +62,7 @@ CPPI.HandleOwner = function( type, ply, ent )
 	if not IsValid(ent) then return true end
 	local owner = ent:CPPIGetOwner()
 	if ent.ppwhite and ply == owner then return true end
-	if isadmin( ply ) and not ent:CreatedByMap() and not ent.DarkRPItem and not ent.perma and not string.find( tostring(ent), 'func_' ) and not string.find( tostring(ent), 'NPC' ) and not ( (ent:GetClass() == 'player' or ent:GetClass() == "brax_atm" )  and type == CPPI_TOOLGUN ) then return true end
+	if isadmin(ply) and not ent:CreatedByMap() and not ent.DarkRPItem and not ent.perma and not string.find( tostring(ent), 'func_' ) and not string.find( tostring(ent), 'NPC' ) and not ( (ent:GetClass() == 'player' or ent:GetClass() == "brax_atm" )  and type == CPPI_TOOLGUN ) then return true end
 	if not ent.DarkRPItem and ply == owner or (IsValid( owner) and owner:CheckFriend( ply, type )) then return true end
 	if hook.Run( 'CPPIHandleTouch', type, ply, ent ) == true then return true end
 

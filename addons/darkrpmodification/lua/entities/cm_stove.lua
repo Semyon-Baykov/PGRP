@@ -12,7 +12,7 @@ ENT.Editable = false
 ENT.Spawnable = true
 ENT.AdminOnly = false
 
-ENT.CookingTime = 300
+ENT.CookingTime = 180
 
 function ENT:SetupDataTables()
     self:NetworkVar( 'Entity', 0, 'owning_ent' )
@@ -80,7 +80,7 @@ else
 
 		for i = 1, 3 do
 			self:SetNWInt( 'CookTime' .. i, 0 )
-			self:SetNWInt( 'CookState' .. i, 1 ) // 1 - Нет теста | 2 - Готовка | 3 - Можно забирать
+			self:SetNWInt( 'CookState' .. i, 1 ) -- 1 - Нет теста | 2 - Готовка | 3 - Можно забирать
 		end
 		
 		self.Health = 500

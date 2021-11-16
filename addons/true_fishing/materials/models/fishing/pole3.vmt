@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/fishing/pole"
+	"$bumpmap" "models/fishing/flat_normal"
+	"$detail" "models/fishing/detail_concrete_02"
+	"$detailscale" 20
+	"$phong" 1
+	"$PhongFresnelRanges" "[0.05 0.5 1]"
+	"$phongexponent" 	 10
+	"$phongboost" 		 .2
+	"$phongtint" "[1 1 1]"
+	"$rimlight"	 1
+	"$rimlightexponent"	     10
+	"$rimlightboost"    .125
+}

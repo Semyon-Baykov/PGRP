@@ -150,7 +150,7 @@ net.Receive( "ULogs_OpenMenu", function()
 	local Delete = tobool( net.ReadBit() )
 	local CurrentVersion = tonumber( net.ReadString( "1" ) )
 	
-	ULogs.CheckUpdate( CurrentVersion )
+	--ULogs.CheckUpdate( CurrentVersion )
 	ULogs.OpenMenu( Delete )
 	
 end)

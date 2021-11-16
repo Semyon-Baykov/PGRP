@@ -69,6 +69,7 @@ function meta:C4_Explode( activator )
 	if not IsValid( self ) then return end
 
 	local radius = 350
+	local prop_list
 
 	-- util.BlastDamage( self, owner, self:GetPos(), radius, 500 )
 	local ents_tbl = ents.FindInSphere( self:GetPos(), radius )
@@ -88,10 +89,14 @@ function meta:C4_Explode( activator )
 			constraint.RemoveAll( v )
 			local PhysObj = v:GetPhysicsObject()
 			PhysObj:EnableMotion(true)
+			
+			table.insert( prop_list, v)
 		end
 
 	end
 	
+	remove_exploded_props(prop_list)
+	PrintTable(prop_list) 
 	-- Boom!
 	self:EmitSound( 'siege/big_explosion.wav', 100, 100 )
 	local effect = EffectData()
@@ -134,6 +139,14 @@ function meta:C4_Explode( activator )
 	
 	self.IsDestroyed = true
 	self:Remove()
+end
+
+function remove_exploded_props (prop_list)
+	timer.Simple(15, function()
+		for k,v in ipairs( prop_list ) do
+			v:Remove()
+		end
+	end)
 end
 
 net.Receive( 'gp_c4', function( _, ply )

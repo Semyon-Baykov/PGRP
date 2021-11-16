@@ -110,6 +110,10 @@ function SWEP:PrimaryAttack()
 		-- Check if the player is near the player 
 		if Owner:GetPos():DistToSqr(ply:GetPos()) < 600^2 then
 			if SERVER then 
+				--[[if ply:IsArrested() then
+					Owner:ChatAddText( Color( 139, 0, 0 ), '[PGRP-багоюз] ', Color( 255, 255, 255 ), 'Вы не можете стрелять шокером в игрока, который отсиживает срок!' )
+					return
+				end--]]
 				if not Realistic_Police.CantBeStun[team.GetName(ply:Team())] then 
 					ply:EmitSound( "ambient/voices/m_scream1.wav" )
 					Realistic_Police.Tazz(ply)	

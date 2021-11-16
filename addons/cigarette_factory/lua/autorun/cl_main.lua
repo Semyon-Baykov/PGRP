@@ -1,0 +1,30 @@
+if SERVER then return end
+
+net.Receive( "cf_update_machine_info", function() 
+	local entIndex = net.ReadInt(32)
+	Entity(entIndex).productionTime = net.ReadInt(32)
+	Entity(entIndex).tobaccoAmount = net.ReadInt(32)
+	Entity(entIndex).paperAmount = net.ReadInt(32)
+	Entity(entIndex).machineHealth = net.ReadInt(32)
+	Entity(entIndex).switchedOn = net.ReadBool()
+	Entity(entIndex).storageUpgrade = net.ReadBool()
+	Entity(entIndex).engineUpgrade = net.ReadBool()
+end )
+
+net.Receive( "cf_update_box_info", function() 
+	local entIndex = net.ReadInt(32)
+	Entity(entIndex).cigsStored = net.ReadInt(32)
+end )
+
+net.Receive( "cf_update_van_info", function() 
+	local entIndex = net.ReadInt(32)
+	Entity(entIndex).sellingPrice = net.ReadInt(32)
+end )
+
+net.Receive( "cf_notification", function( ) 
+	local nottype = net.ReadInt(16)
+	local duration = net.ReadInt(16)
+	local text = net.ReadString()
+	notification.AddLegacy( text, nottype, duration )
+    surface.PlaySound("buttons/lightswitch2.wav")
+end )

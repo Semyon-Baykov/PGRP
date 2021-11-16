@@ -193,4 +193,8 @@
 	"pgrp_physspawn_stop"		"1"
 	"pgrp_sp_damage"		"0"
 	"pgrp_sp_arrest"		"0"
+	"pgrp_player_freeze_ents"		"1"
+	"pgrp_slmt_amount"		"7000000"
+	"pgrp_stop_allowing_large_amounts"		"1"
+	"pgrp_sala_amount"		"30000000"
 }

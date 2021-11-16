@@ -1,0 +1,14 @@
+vertexlitgeneric
+{
+$baseTexture "models/svidetel/genericmouth_colspec"
+//$bumpmap "models/svidetel/genericmouth_norms"
+
+$halflambert 1
+$phong 1
+$phongboost "3"
+$phongexponent 5
+$phongtint "[.4 .2 .2]"
+$phongfresnelranges "[.2 .5 1]"
+
+
+}

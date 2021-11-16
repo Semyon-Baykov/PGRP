@@ -37,12 +37,12 @@ hook.Add( 'PlayerSpawnSENT', 'gp_sentaccess', function( ply, name )
 	if ( string.sub( string.lower( name ), 1, 15 ) == "darkrp_moneypot" ) then
 		return true
 	end
+	
 	if not ply:gp_SentAccess() then return false end
-
-	if not ply:IsSuperAdmin() and blacklist[name] then 
-		ply:ChatAddText( Color(255, 0, 0), '[Ошибка] ', Color(255,255,255), 'Вы не можете использовать данный предмет.' )
-		return false 
+	
+	for k,v in pairs( player.GetAll() ) do
+		v:ChatAddText( Color( 139, 0, 0 ), '[PGRP Admin] ', Color(255,255,255), 'Администратор '..ply:Nick()..' заспавнил "'..name..'"' )
 	end
 	return true
-
+	
 end )

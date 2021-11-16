@@ -1,7 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture" "models/weapons\v_models\schmung_mp7\sights_down"
-	"$envmap" "env_cubemap"
-	"$envmapmask" "models\weapons\v_models\schmung_mp7\sights_down_ref"
-}
-

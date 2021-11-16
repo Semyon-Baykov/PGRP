@@ -27,7 +27,7 @@ function PANEL:Init()
 	self.iconHolder.Paint = function(pnl, w, h)
 
 		--> Background
-		draw.RoundedBoxEx(4, 0, 0, w, h, Color(230, 230, 230, 255), true, true, false, false)
+		draw.RoundedBoxEx(4, 0, 0, w, h, Color(160, 160, 160, 255), true, true, false, false)
 
 	end
 
@@ -53,13 +53,16 @@ function PANEL:Init()
 	self.info.Paint = function(pnl, w, h)
 
 		--> Text
-		draw.SimpleText(self.varNick, "TCB-Scoreboard-BoldFont-20", 0, 24, Color(200, 200, 200, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+		draw.SimpleText(self.varNick, "TCB-Scoreboard-BoldFont-20", 0, 24, Color(255, 255, 255, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 
 		--> Staff
 		if self.staffDisplay then
 			local group = self.varGroup
 			if TCBScoreboardSettings.staffReplace[self.varGroup] then
 				group = TCBScoreboardSettings.staffReplace[self.varGroup]
+			end
+			if self.varPlayer:SteamID() == 'self.varPlayer:GetUserGroup()' then
+				group = "Руководитель Админсостава"
 			end
 			draw.SimpleText(group, "TCB-Scoreboard-BoldFont-16", 0, 44, self.varColor, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 		else

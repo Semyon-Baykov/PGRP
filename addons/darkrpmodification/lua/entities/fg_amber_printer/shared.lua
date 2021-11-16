@@ -17,8 +17,8 @@ ENT.PrintName = 'FG Printer - Amber'
 --> \addons\darkrpmodification\lua\entities\fg_base_printer\shared.lua
 
 --> Printer
-ENT.pName = 'Amber Printer'
+ENT.pName = 'Bronze Printer'
 ENT.pColor = Color(255, 126, 0, 255)
 
 --> Defaults
-ENT.pQuality = 155
+ENT.pQuality = 190

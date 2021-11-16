@@ -6,6 +6,8 @@ admingift.usergroups = {
 		
 	'superadmin',
 	'sponsor+',
+	'nab_admin',
+	'nab_moder+',
 	'owner',
 
 }

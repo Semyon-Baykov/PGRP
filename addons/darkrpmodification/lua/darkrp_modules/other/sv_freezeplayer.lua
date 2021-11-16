@@ -3,9 +3,11 @@ if not SERVER then return end
 local groups = {
 	'superadmin',
 	'sponsor+',
+	'nab_admin',
+	'rukovoditel',
+	'nab_moder-',
+	'nab_moder+',
 	'owner',
-	'godadmin',
-	'slavaukraine',
 	'donsuperadmin',
 	'admin+',
 	'admin',

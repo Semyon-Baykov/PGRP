@@ -17,14 +17,14 @@ http://wiki.darkrp.com/index.php/DarkRP:CustomEntityFields
 Add entities under the following line:
 ---------------------------------------------------------------------------]]
 
-
+--[[
 		DarkRP.createEntity("Денежный принтер", {
 		ent = "money_printer2",
 		model = "models/props_c17/consolebox01a.mdl",
 		price = 3000,
 		max = 1,
 		cmd = "gpmp",
-})
+}) --]]
 		DarkRP.createEntity("Бронзовый Денежный принтер", {
 		ent = "fg_amber_printer",
 		model = "models/props_c17/consolebox01a.mdl",
@@ -190,6 +190,14 @@ DarkRP.createEntity("Анти-наркотический антидот", {
 	cmd = "buyhelpmedrugs",
 	allowed = {TEAM_MEDIC},
 })
+DarkRP.createEntity("Предупреждение о смерте", {
+	ent = "ch_medic_lifealert",
+	model = "models/craphead_scripts/paramedic_essentials/props/alarm.mdl",
+	price = 500,
+	max = 1,
+	cmd = "buylifealert",
+	allowed = {TEAM_MEDIC},
+})
 DarkRP.createEntity("Телевизор", {
 	ent = "mediaplayer_tv",
 	model = "models/props_phx/rt_screen.mdl",
@@ -220,30 +228,6 @@ DarkRP.createEntity("Рация", {
 	price = 5000,
 	max = 6,
 	cmd = "buyradio",
-	allowed = {TEAM_TRADE},
-})
-DarkRP.createEntity("Вейп", {
-	ent = "weapon_vape",
-	model = "models/swamponions/vape.mdl",
-	price = 50000,
-	max = 1,
-	cmd = "buyvape",
-	allowed = {TEAM_TRADE},
-})
-DarkRP.createEntity("Многовкусовой вейп", {
-	ent = "weapon_vape_juicy",
-	model = "models/swamponions/vape.mdl",
-	price = 75000,
-	max = 1,
-	cmd = "buyvape2",
-	allowed = {TEAM_TRADE},
-})
-DarkRP.createEntity("Нелегальный вейп", {
-	ent = "weapon_vape_hallucinogenic",
-	model = "models/swamponions/vape.mdl",
-	price = 125000,
-	max = 1,
-	cmd = "buyvape3",
 	allowed = {TEAM_TRADE},
 })
 
@@ -423,4 +407,73 @@ DarkRP.createEntity("RGB лента", {
     max = 8,
     cmd = "buyrgbkit",
 	allowed = {TEAM_BITCOIN}
+})
+
+DarkRP.createEntity("Флешка для взлома доступа", {
+    ent = "ch_bitminer_hacking_usb",
+    model = "models/craphead_scripts/bitminers/dlc/usb.mdl",
+    price = 5500,
+    max = 1,
+    cmd = "buyhackusb",
+	allowed = {TEAM_BITCOIN}
+})
+
+DarkRP.createEntity("Флешка с антивирусом", {
+    ent = "ch_bitminer_antivirus_usb",
+    model = "models/craphead_scripts/bitminers/dlc/usb_second.mdl",
+    price = 5250,
+    max = 1,
+    cmd = "buyanitvirususb",
+	allowed = {TEAM_BITCOIN}
+})
+
+--[[ CIGARETTE --]]
+
+DarkRP.createEntity("Сигаретный Станок", {
+    ent = "cf_cigarette_machine",
+    model = "models/cigarette_factory/cf_machine.mdl",
+    price = 10000,
+    max = 2,
+    cmd = "buycigmachine",
+	allowed = {TEAM_CIGAR}
+})
+DarkRP.createEntity("Коробка для Экспорта", {
+    ent = "cf_delievery_box",
+    model = "models/props_junk/cardboard_box003a.mdl",
+    price = 10,
+    max = 2,
+    cmd = "buyexportbox",
+	allowed = {TEAM_CIGAR}
+})
+DarkRP.createEntity("Бумага", {
+    ent = "cf_roll_paper",
+    model = "models/cigarette_factory/cf_rollpaper.mdl",
+    price = 300,
+    max = 4,
+    cmd = "buypaper",
+	allowed = {TEAM_CIGAR}
+})
+DarkRP.createEntity("Табак", {
+    ent = "cf_tobacco_pack",
+    model = "models/cigarette_factory/cf_tobacco_pack.mdl",
+    price = 450,
+    max = 4,
+    cmd = "buytabak",
+	allowed = {TEAM_CIGAR}
+})
+DarkRP.createEntity("Апгрейд Скорости", {
+    ent = "cf_engine_upgrade",
+    model = "models/maxofs2d/thruster_propeller.mdl",
+    price = 1000,
+    max = 1,
+    cmd = "buyspeedupg",
+	allowed = {TEAM_CIGAR}
+})
+DarkRP.createEntity("Апгрейд Вместимости", {
+    ent = "cf_storage_upgrade",
+    model = "models/thrusters/jetpack.mdl",
+    price = 1000,
+    max = 1,
+    cmd = "buycmestupg",
+	allowed = {TEAM_CIGAR}
 })

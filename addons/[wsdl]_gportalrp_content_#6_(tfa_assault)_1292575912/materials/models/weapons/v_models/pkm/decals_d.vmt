@@ -1,5 +1,0 @@
-"Vertexlitgeneric"
-{
-	"$basetexture"  "models\weapons\v_models\pkm\decals"
-	"$nocull" "1"
-}

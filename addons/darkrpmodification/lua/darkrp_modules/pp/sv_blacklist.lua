@@ -63,6 +63,7 @@ local defaultblocked = {
 'models/hunter/blocks/cube6x6x2.mdl',
 'models/hunter/blocks/cube6x6x6.mdl',
 'models/hunter/blocks/cube6x8x2.mdl',
+'models/hunter/tubes/circle2x2.mdl'
 
 }
 

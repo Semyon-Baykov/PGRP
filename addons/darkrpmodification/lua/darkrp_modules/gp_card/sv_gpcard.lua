@@ -17,24 +17,6 @@ util.AddNetworkString( 'gpcard_uaaa' )
 util.AddNetworkString( 'DRPLoadedFine' )
 
 local terms_tbl = {
-	--[[{
-		term_pos = Vector(4222.484375, 1730.382568, -353.608826),
-		term_ang = Angle( 0,180,0 ),
-		term_spawnpos = { Vector(4238.178711, 1276.811157, -361.133728), Vector(4363.597168, 1279.158325, -361.141632), Vector(4480.623535, 1277.039551, -361.141327), Vector(4595.668945, 1276.949341, -361.165253), Vector(4710.030273, 1272.582397, -361.133026) },
-		term_spawnang = Angle( 0, 0, 0 )
-	},
-	{
-		term_pos = Vector(5504.077637, -468.646179, -195.660980),
-		term_ang = Angle( 0,180,0 ),
-		term_spawnpos = { Vector(5259.560547, -662.233765, -203.184036), Vector(5265.182129, -790.309509, -203.197052), Vector(5273.682617, -926.728699, -203.181732), Vector(5280.675293, -1049.604980, -203.150848), Vector(5291.420410, -1176.195068, -203.202255) },
-		term_spawnang = Angle( 0, -90, 0 )
-	},
-	{
-		term_pos = Vector(3115.309082, -2324.676758, -49.533619),
-		term_ang = Angle( 0,-180,0 ),
-		term_spawnpos = { Vector(3388.130127, -2448.895020, -57.136837), Vector(3388.204346, -2570.536377, -57.141376), Vector(3389.732910, -2685.172119, -57.151184), Vector(3390.857422, -2805.634521, -57.141903) },
-		term_spawnang = Angle( 0, 90, 0 )
-	},--]]
 	{
 		term_pos = Vector(-6946.330078, -1833.427124, -203.247604),
 		term_ang = Angle( 0,90,0 ),
@@ -58,6 +40,8 @@ local terms_tbl = {
 
 function SpawnTerms()
 
+	print("HOOK INITIALIZED AAAA OOOO!!!")
+
 	for k,v in pairs( terms_tbl ) do
 
 		local en = ents.Create( 'ent_cardterm' )
@@ -67,16 +51,18 @@ function SpawnTerms()
 		en.spawnang = v.term_spawnang
 		en:Spawn()
 		en:GetPhysicsObject():EnableMotion( false )
-
+		
+		print("Car entity spawned!")	
 	end
 
 end
 hook.Add( 'InitPostEntity', 'gpcard_init', function()
+	print("HOOK INITIALIZED AAAA OOOO!!!")
 	SpawnTerms()
 end )
 
 function meta:card_chat( text )
-	self:ChatAddText( Color( 102, 204, 255 ), '[GPRP Cars] ', Color( 255, 255, 255 ), text )
+	self:ChatAddText( Color( 139, 0, 0 ), '[PGRP Cars] ', Color( 255, 255, 255 ), text )
 end
 
 function meta:AddCar( class, don, color, number, parts )

@@ -25,12 +25,13 @@ end
 
 local function startSpectating(ply, target)
     local canSpectate = hook.Call("FSpectate_canSpectate", nil, ply, target)
-    if canSpectate == false then return end
+    if ply:gp_IsAdmin() == false then return end
 
     ply.FSpectatingEnt = target
     ply.FSpectating = true
 
     ply:ExitVehicle()
+	ply:ConCommand('enable_thirdperson 0')
 
     net.Start("FSpectate")
         net.WriteBool(target == nil)
@@ -46,7 +47,7 @@ end
 
 local function Spectate(ply, cmd, args)
     CAMI.PlayerHasAccess(ply, "FSpectate", function(b, _)
-        if not b then ply:ChatPrint("No Access!") return end
+        if not ply:gp_IsAdmin() then ply:ChatPrint("Вы не админ!") return end
 
         local target = findPlayer(args[1])
         if target == ply then ply:ChatPrint("Invalid target!") return end
@@ -58,7 +59,7 @@ concommand.Add("FSpectate", Spectate)
 
 net.Receive("FSpectateTarget", function(_, ply)
     CAMI.PlayerHasAccess(ply, "FSpectate", function(b, _)
-        if not b then ply:ChatPrint("No Access!") return end
+        if not ply:gp_IsAdmin() then ply:ChatPrint("Вы не админ!") return end
 
         startSpectating(ply, net.ReadEntity())
     end)
@@ -66,7 +67,7 @@ end)
 
 local function TPToPos(ply, cmd, args)
     CAMI.PlayerHasAccess(ply, "FSpectateTeleport", function(b, _)
-        if not b then ply:ChatPrint("No Access!") return end
+        if not ply:gp_IsAdmin() then ply:ChatPrint("Вы не админ!") return end
 
         local x, y, z = string.match(args[1] or "", "([-0-9\\.]+),%s?([-0-9\\.]+),%s?([-0-9\\.]+)")
         local vx, vy, vz = string.match(args[2] or "", "([-0-9\\.]+),%s?([-0-9\\.]+),%s?([-0-9\\.]+)")

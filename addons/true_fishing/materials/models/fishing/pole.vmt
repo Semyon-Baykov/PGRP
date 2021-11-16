@@ -1,0 +1,65 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/fishing/pole"
+	"$bumpmap" "models/fishing/flat_normal"
+	"$detail" "models/fishing/dt_metal_pipe"
+	"$detailscale" 20
+	"$detailblendfactor" .25
+	"$phong" 1
+	"$PhongFresnelRanges" "[0.05 0.5 1]"
+	"$phongexponent" 	 25
+	"$phongboost" 		 1
+	"$phongtint" "[1 1 1]"
+	"$rimlight"	 1
+	"$rimlightexponent"	     1
+	"$rimlightboost"    .25
+	
+
+	
+	"$blendtintbybasealpha" "1" // alpha channel of $basetexture: color mask.
+ 	"$blendtintcoloroverbase" "0" // blend mode. anything =/= 0 is ugly!
+	
+	
+	"$PhongBrightnessScalar" "0.5" // see below. "0.5" will get overwritten.
+	
+	Proxies
+	{
+		PlayerColor
+		{
+			resultVar	$color2 // pass the player color value to Gmod
+			default		0.23 0.35 0.41 // unused for now.
+		}
+		Clamp // clamp the chosen color between 1% and 125% (usually)
+		{
+			min 0.01
+			max 1.25
+			srcVar1 "$color2"
+			resultVar "$color2"
+		}
+		Clamp // copy this value to phong tint, clamp it to 50% min.
+		{
+			min 0.5
+			max 1.0
+			srcVar1 "$color2"
+			resultVar "$phongtint"
+		}
+		Equals // copy $color2 value to exterior variable. this makes it
+		{      // no longer a RGB array but a single float instead (!??)
+			srcVar1 "$color2"
+			resultVar "$PhongBrightnessScalar"
+		}
+		Multiply // multiply $phongtint by this new float value.
+		{
+			srcVar1 "$phongtint"
+			srcVar2 "$phongBrightnessScalar"
+			resultVar "$phongtint"
+		}
+		Clamp // the result of this multiply doesn't go any lower than 20%
+		{
+			min 0.25
+			max 1.00
+			srcVar1 "$phongtint"
+			resultVar "$phongtint"
+		}
+	}
+}

@@ -3,7 +3,7 @@ if CLIENT then return end
 --Oh my god I can sit anywhere! by Xerasin--
 local NextUse = setmetatable({},{__mode='k', __index=function() return 0 end})
 
-local SitOnEntsMode = CreateConVar("sitting_ent_mode","1", {FCVAR_NOTIFY, FCVAR_ARCHIVE})
+local SitOnEntsMode = CreateConVar("sitting_ent_mode","3", {FCVAR_NOTIFY, FCVAR_ARCHIVE})
 --[[
 	0 - Can't sit on any ents
 	1 - Can't sit on any player ents
@@ -227,7 +227,7 @@ local model_blacklist = {  -- I need help finding out why these crash
 }
 
 function META.Sit(ply, EyeTrace, ang, parent, parentbone, func, exit)
-	if ply:isArrested() then ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-Багоюз] ', Color( 255, 255, 255 ), 'Во время арреста нельзя садиться!' ) return end
+	if ply:isArrested() then ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-Багоюз] ', Color( 255, 255, 255 ), 'Во время нахождения в тюремном заключение, использовать сидение запрещенно!' ) return end
 	
 	if EyeTrace == nil then
 		EyeTrace = ply:GetEyeTrace()

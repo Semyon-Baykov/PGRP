@@ -13,6 +13,11 @@
 		pos1 = Vector( -1466.718262, -116.077827, -188.976212 ),
 		pos2 = Vector( -2321.186768, 347.162811, 426.091278 )	
 	},
+	
+	['rp_krasnogorsk_pg_v1f'] = {
+		pos1 = Vector( -1466.718262, -116.077827, -188.976212 ),
+		pos2 = Vector( -2321.186768, 347.162811, 426.091278 )	
+	},
 }
 
 TEAM_CITIZEN = DarkRP.createJob("Гражданин", {
@@ -34,6 +39,10 @@ TEAM_CITIZEN = DarkRP.createJob("Гражданин", {
 	},
 	description = [[Гражданин  базовый общественный слой, которым вы можете безпрепятственно стать.
 	У вас нет предопределенной роли в жизни города.
+
+	В зависимости от того, как вы себя ведёте, полиция может до вас докопаться.
+	Остерегайтесь гопников и других криминалов, они могут вас ограбить!
+	
 	Вы можете придумать себе свою собственную профессию и заниматься вашим делом.]],
 	weapons = {"pass_ua"},
 	command = "citizen",
@@ -54,10 +63,12 @@ TEAM_POLICE = DarkRP.createJob("Сотрудник Полиции", {
   "models/player/kerry/policeru_06.mdl",
   "models/player/kerry/policeru_07.mdl",
   },
-  description = [[Вы обычный сотрудник полиции.
-  Патрулируйте город и охраняйте ОМВД.
-  Для более эффективной работы правоохрнаительных органов включите радар (зажать С) и рацию (6 слот оружия).
-  Не забывайте писать причины ареста в рапорт и регулярно читать законы.]],
+  description = [[Вы обычный сотрудник полиции. Патрулируйте город и охраняйте ОМВД. Вы подичняетесь мэру и начальнику.
+  У вас есть право арестовать преступника или даже применить летальное оружие.
+  
+  Что-бы взять доступ к обыску или подать гражданина в розыск, используйте опции в C-menu (зажмите C)
+  
+  Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
   weapons = { "arrest_stick", "stunstick", "door_ram", "tfa_pm",  "wep_jack_job_drpradio", "pass_mvd", "tfa_ots2", "weapon_rpt_finebook", "weapon_rpt_handcuff", "weapon_rpt_stungun"},	-- weaponchecker
   command = "cp",
   max = 6,
@@ -88,9 +99,10 @@ TEAM_DPS = DarkRP.createJob("Сотрудник ДПС", {
   	color = Color(0, 178, 255, 255),
   	model = {
   "models/player/wisay/dpsment.mdl",},
-  description = [[Вы Сотрудник Дорожно-патрульной службы, следите за дорожным движением и берите деревянные с нарушителей. 
-  Для более эффективной работы правоохрнаительных органов включите радар (зажать С) и рацию (6 слот оружия).
-  Не забывайте писать причины ареста в рапорт и регулярно читать законы.]],
+  description = [[Вы Сотрудник Дорожно-патрульной Службы, следите за дорожным движением и берите деревянные с нарушителей. Вы подичняетесь мэру и начальнику.
+  У вас есть право арестовать преступника или даже применить летальное оружие.
+  
+  Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
   weapons = { "arrest_stick", "stunstick", "door_ram", "tfa_pm", "wep_jack_job_drpradio", "weapon_palka", "pass_mvd", "tfa_ots2", "weapon_rpt_finebook", "weapon_rpt_handcuff", "weapon_rpt_stungun"},
   command = "dps",
   max = 2,
@@ -110,9 +122,10 @@ TEAM_PPS = DarkRP.createJob("Сотрудник ППС", {
 			"models/player/kerry/policeru_04_patrol.mdl",
 			},
 	description = [[
-	 Вы имеете более сильное оружие для борьбы с преступностью в отличии от обычного сотрудника полиции. Патрулируйте город и штурмуйте здания.
-	 Для более эффективной работы правоохрнаительных органов включите радар (зажать С) и рацию (6 слот оружия).
-  Не забывайте писать причины ареста в рапорт и регулярно читать законы.]],
+	 Вы имеете более сильное оружие для борьбы с преступностью в отличии от обычного сотрудника полиции. Патрулируйте город и штурмуйте здания. Вы подичняетесь мэру и начальнику.
+	 У вас есть право арестовать преступника или даже применить летальное оружие.
+	 
+	 Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
 	weapons = { "arrest_stick", "stunstick", "door_ram", "tfa_pm",  "tfa_aks74u", "wep_jack_job_drpradio", "pass_mvd", "weapon_rpt_finebook", "weapon_rpt_handcuff", "weapon_rpt_stungun"},
 	command = "pps",
 	max = 2,
@@ -125,7 +138,7 @@ TEAM_PPS = DarkRP.createJob("Сотрудник ППС", {
  	category = "Правопорядок",
  	NeedToChangeFrom = {TEAM_POLICE},
 	PlayerSpawn = function(ply)
-        ply:SetArmor(50)
+        ply:SetArmor(100)
     end
 })
 
@@ -139,11 +152,10 @@ TEAM_CHIEF = DarkRP.createJob("Начальник Полиции", {
   "models/player/kerry/policeru_06.mdl",
   "models/player/kerry/policeru_07.mdl",
   },
-  description = [[Начальник Полиции является главным среди полицейских.
-  Координируйте действия сотрудников Полиции, наводя порядок в городе.
-  Для более эффективной работы правоохрнаительных органов включите радар (зажать С) и рацию (6 слот оружия).
-  Не забывайте писать причины ареста в рапорт и регулярно читать законы.
-  ]],
+  description = [[Начальник Полиции является главным среди полицейских, только мэр может вам приказывать. Координируйте действия сотрудников Полиции, наводя порядок в городе.
+  У вас есть право арестовать преступника или даже применить летальное оружие.
+	 
+	Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
   weapons = { "arrest_stick", "unarrest_stick", "stunstick", "door_ram", "tfa_pm", "wep_jack_job_drpradio", "pass_mvd", "tfa_vityaz19", "weapon_rpt_finebook", "weapon_rpt_handcuff", "weapon_rpt_stungun"},
   command = "chief",
   max = 1,
@@ -159,10 +171,11 @@ TEAM_CHIEF = DarkRP.createJob("Начальник Полиции", {
 TEAM_MAYOR = DarkRP.createJob("Мэр", {
 	color = Color(150, 20, 20, 255),
 	model = "models/player/breen.mdl",
-	description = [[Мэр города создает законы, чтобы улучшить жизнь людей в городе, а также управляет работой Полиции и Росгвардии.
+	description = [[Мэр города создает законы, чтобы улучшить жизнь людей в городе, а также управляет работой Полиции и информирует РГ.
 	Если вы мэр, то вы можете создавать или принимать ордера на обыск игроков.
 	Во время Комендантского часа все люди должны быть в своих домах, а полицейские должны патрулировать город.
-	Чтобы использовать передачу напишите /broadcast.]],
+	
+	Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
 	weapons = {"pass_ua","wep_jack_job_drpradio"},
 	command = "mayor",
 	max = 1,
@@ -203,8 +216,12 @@ TEAM_GANG = DarkRP.createJob("Гопник", {
 		"models/player/kerry/gopnik_07.mdl"
 	},
 	description = [[Низшая каста в криминальном мире.
-	А.У.Е. Жизнь ворам, хуй мусорам. Ходу ВОРОВСКОМУ, смерти мусорскому. Часик в радость, чифир в сладость. Вы занимайтесь преступной деятельностью.
-	Бандиты это не одна профессия, вы можете создавать свои банды в !party.]],
+	А.У.Е. Жизнь ворам, хуй мусорам. Ходу ВОРОВСКОМУ, смерти мусорскому. Часик в радость, чифир в сладость. Вы занимаетесь преступной деятельностью.
+	
+	Знайте, полицейские и росгвардейцы могут накатить на вас бочку, посадить в тюрягу, или даже убить.
+	У вас есть возможность ставить все виды маников, но будьте острожны!
+	
+	Лучше всего скооперироваться в банде!]],
 	weapons = {"pass_ua"},
 	command = "gangster",
 	max = 15,
@@ -233,7 +250,7 @@ TEAM_MOB = DarkRP.createJob("Глава банды", {
 	description = [[Глава банды является самым авторитетным преступником в городе.
 	Он даёт задания своим подчинённым бандитам или работает в одиночку.
 	Он обладает способностью взламывать квартиры и выпускать из тюрем людей.]],
-	weapons = { "lockpick", "unarrest_stick","pass_ua"},
+	weapons = { "lockpick_prem", "unarrest_stick","pass_ua"},
 	command = "mobboss",
 	max = 1,
 	salary = GAMEMODE.Config.normalsalary * 1.34,
@@ -289,7 +306,7 @@ TEAM_MEH = DarkRP.createJob("Автомастер", {
 TEAM_SECURITY = DarkRP.createJob("Охранник", {
 	color = Color(0, 140, 255, 255),
 	model = "models/player/odessa.mdl",
-	description = [[Нанимайтесь в охрану магазины и предприятия.
+	description = [[Нанимайтесь в охрану магазинов и предприятий.
 	Вы должны защищать заведение от хулиганов и мелких воров.
 	При сложной ситуации вызывайте полицию.
 	По умолчанию вам даётся только дубинка, так что особо не рискуйте, действуйте осторожно.]],
@@ -315,7 +332,7 @@ TEAM_MEDIC = DarkRP.createJob("Сотрудник МЧС", {
 		"models/player/kerry/russian_mes7.mdl"
 	},
 	description = [[Вы сотрудник Министерства Черезвычайных Ситуация. Ваша задача лечить граждан в офисе МЧС и тушить пожары.]],
-	weapons = {'weapon_sexinguisher',  "weapon_medkit","pass_ua"},
+	weapons = {"pass_ua","fire_axe","fire_extinguisher"},
 	command = "medic",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary,
@@ -395,28 +412,27 @@ TEAM_COOK = DarkRP.createJob("Повар", {
 category = "Бизнес"
 })
 
-TEAM_MINER = DarkRP.createJob("Шахтер", {
+TEAM_FISH = DarkRP.createJob("Рыбак", {
     color = Color(255, 196, 0, 255),
-	model = {"models/player/eli.mdl"},
-    description = [[Шахтер добывает руду и получает за это деньги. Месторождение руды находится в лесу, а на рынке находится скупщик.]],
-    weapons = {"pass_ua", "weapon_hl2pickaxe"},
-    command = "miner",
-    max = 1,
+	model = "models/player/zelpa/fisherman.mdl",
+    description = [[Рыбак ловит рыбу на озере и продаёт её НПС.
+	Пройдите к небольшому причалу что-бы получить удочку или ловушки. Там вы сможете понять что вам можно поймать и каким образом.
+	
+	Ваша работа полностью легальна, но некоторые менты могут к вам докопаться что вы рыбачите без лицензии!]],
+    weapons = {"pass_ua"},
+    command = "fisherman",
+    max = 2,
     salary = GAMEMODE.Config.normalsalary,
     admin = 0,
     vote = false,
-    customCheck = function(ply)
-		return false
-	end,
-	CustomCheckFailMsg = "Временно недоступен, на переработке, которая уже началась (:",
-	category = "Бизнес"
+	category = "Граждане"
 })
 --------------------------------------------------------------------------------------------------------------------------------------
 TEAM_ADMIN = DarkRP.createJob("Администратор", {
    color = Color(219, 0, 0, 255),
    model = {"models/player/gman_high.mdl"},
    description = [[Давайте по шапке всем нарушителям.]],
-   weapons = {'weapon_keypadchecker', "unarrest_stick", "med_kit", "weaponchecker", "unarrest_stick"},
+   weapons = {'weapon_keypadchecker', "unarrest_stick", "med_kit"},
    command = "admin",
    max = 0,
    salary = 0,
@@ -425,7 +441,7 @@ TEAM_ADMIN = DarkRP.createJob("Администратор", {
    hasLicense = false,
    candemote = false,
 	customCheck = function(ply) return ply:gp_IsAdmin() end,
-	category = "Другие"
+	category = "Администрация"
 })
 
 TEAM_OMON = DarkRP.createJob("Сотрудник ОМОН", {
@@ -433,7 +449,8 @@ TEAM_OMON = DarkRP.createJob("Сотрудник ОМОН", {
   model = {'models/player/kerry/policeru_01_omon.mdl','models/player/kerry/policeru_02_omon.mdl','models/player/kerry/policeru_03_omon.mdl','models/player/kerry/policeru_04_omon.mdl', 'models/player/kerry/policeru_05_omon.mdl', 'models/player/kerry/policeru_06_omon.mdl', 'models/player/kerry/policeru_07_omon.mdl'},
     description = [[Вы Сотрудник Отряда мобильного особого назначения. Разгоняйте митинги Подвального и помогаете в штурмах полиции, когда она не справляется. 
     Вам желательно работать только с полицией, потому что, вы сильные, но не в силах заполнять рапорт и проводить обыск один. 
-    Для более эффективной работы правоохрнаительных органов включите радар (зажать С) и рацию (6 слот оружия).]],
+	
+    Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
     weapons = {'weapon_flashgrenade','weapon_gas','wep_jack_job_drpradio','stunstick','door_ram','tfa_pl14','tfa_vss','tfa_val','riot_shield', "pass_mvd", "weapon_rpt_finebook", "weapon_rpt_handcuff", "weapon_rpt_stungun"},
     command = "omon",
     max = 4,
@@ -444,7 +461,10 @@ TEAM_OMON = DarkRP.createJob("Сотрудник ОМОН", {
 	hasLicense = true,
   	customCheck = function( ply ) return ply:IsSecondaryUserGroup "premium" end,
   CustomCheckFailMsg = "Вы должны быть Premium! | После покупки, введите !premium в чат",
-  category = "Premium работы"
+  category = "Premium работы",
+  PlayerSpawn = function(ply)
+        ply:SetArmor(100)
+    end
 })
 
 TEAM_JESUS = DarkRP.createJob('есус', {
@@ -468,7 +488,7 @@ TEAM_JESUS = DarkRP.createJob('есус', {
 TEAM_CHECEN = DarkRP.createJob("Чеченец", {
     color = Color(105, 213, 120, 255),
 	model = {"models/jessev92/kuma/characters/osama_ply.mdl"},
-    description = [[ Вы уроженец Чеченской Республики, выполняйте намаз, поясняйте за крутость Чечни (нажать R с кораном). И ищите Мэддисона и Вольнова (кто не понял, тот поймет).]],
+    description = [[ Вы уроженец Чеченской Республики, выполняйте намаз, поясняйте за крутость Чечни. И ищите Мэддисона и Вольнова (кто не понял, тот поймет).]],
     weapons = {'weapon_jihadbomb',"weapon_slovarb"},
     command = "chechen",
     max = 1,
@@ -495,9 +515,9 @@ TEAM_FBI = DarkRP.createJob("Сотрудник ФСБ", {
   },
   description = [[
   Вы агент Федеральной службы безопасности, ваша задача обеспечивать борьбу с коррупцией, экстремизмом, терроризмом и бандформированиями.
-  У вас есть полномочия следить за гражданами в целях общественной безопасности и раскрытия преступлений, а также проводить спецальные операции при поддержке дополнительных полицейских структур. Вы также имеете право быть наблюдателем при полиции и росгвардии (следить за исполнением законов и устава).
-  Для более эффективной работы правоохрнаительных органов включите радар (зажать С) и рацию (6 слот оружия).
-  Не забывайте писать причины ареста в рапорт и регулярно читать законы.]],
+  У вас есть полномочия следить за гражданами в целях общественной безопасности и раскрытия преступлений, а также проводить спецальные операции при поддержке дополнительных полицейских структур.
+  
+  Для более эффективной работы правоохрнаительных органов используйте рацию (C для настройки, B для использования).]],
   weapons = {"arrest_stick","unarrest_stick","stunstick","door_ram","tfa_pl14","weapon_flashgrenade","wep_jack_job_drpradio","pass_fsb", "tfa_ak74m", "weapon_rpt_finebook", "weapon_rpt_handcuff", "weapon_rpt_stungun"},
   command = "fsb",
   max = 1,
@@ -508,7 +528,10 @@ TEAM_FBI = DarkRP.createJob("Сотрудник ФСБ", {
   hasLicense = true,
   customCheck = function( ply ) return ply:IsSecondaryUserGroup "premium" end,
   CustomCheckFailMsg = "Вы должны быть Premium! | После покупки, введите !premium в чат",
-category = "Premium работы"
+  category = "Premium работы",
+  PlayerSpawn = function(ply)
+      ply:SetArmor(100)
+  end	
 })
 
 TEAM_PARK = DarkRP.createJob("Руфер", {
@@ -516,7 +539,9 @@ TEAM_PARK = DarkRP.createJob("Руфер", {
 	model = "models/player/p2_chell.mdl",
 	description = [[
 	Ты руфер. И пока молодой нужно залезть на каждую крышу, доебаться до каждого бомжа и побегать от мусоров.
-	Ваше развлечение всегда могут похерить люди в погонах, так что будьте аккуратны.]],
+	Ваше развлечение всегда могут похерить люди в погонах, так что будьте аккуратны.
+	
+	Хорошая работа для посика пасхалок)))]],
 	weapons = {"climb_swep2","pass_ua"},
 	command = "park",
 	max = 0,
@@ -540,7 +565,7 @@ TEAM_GANGVIP = DarkRP.createJob("Гангстер", {
 	Вы круче бандитов.
 	Убиваете, воруйте и вымогайте деньги.
 	Вы имеете отмычку для взлома укрепленных баз.]],
-	weapons = {"lockpick","pass_ua"},
+	weapons = {"lockpick_prem","pass_ua"},
 	command = "gangstervip",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary,
@@ -581,7 +606,7 @@ TEAM_NRG1 = DarkRP.createJob("Сотрудник росгвардии", {
     color = Color(60, 120, 70, 255),
     model = {"models/player/kerry/solder.mdl","models/player/kerry/solder_2.mdl","models/player/kerry/solder_3.mdl","models/player/kerry/solder_4.mdl"},
     description = [[ ]],
-    weapons = {"pass_guard","weaponchecker"},
+    weapons = {"pass_guard", "weaponchecker"},
     command = "nrg1",
     max = 0,
     salary = 80,
@@ -651,8 +676,9 @@ TEAM_BITCOIN = DarkRP.createJob("Биткойн Майнер", {
 	description = [[Вы - биткойн майнер. Ваша цель намайнить как можно больше биткойнов с помощью предметов которые будут вам доступны в F4-menu. 
 	Для начала можно купить обычный генератор что-бы добывать електричество и полку битмайнера. 
 	Ваш бизнес медленно окупается, но когда у вас появится достаточное количство майнеров - вы богаты!
-	Ваш бизнес легален, но знайте, если от соседей пойдут жалобы на громкий звук или повышенный уровень радиации - менты к вам набегут на раз два.]],
-	weapons = {"pass_ua"},
+	
+	Ваш бизнес нелегален и менты надают вам по шапке если найдут!]],
+	weapons = {"pass_ua", "ch_bitminers_tablet", "ch_bitminers_repair_wrench"},
 	command = "bitminer",
 	max = 5,
 	salary = GAMEMODE.Config.normalsalary,
@@ -661,7 +687,118 @@ TEAM_BITCOIN = DarkRP.createJob("Биткойн Майнер", {
 	hasLicense = false,
 	candemote = true,
 	CustomCheckFailMsg = "Данная работа будет доступна в 3:30 по МСК!",
-	category = "Бизнес"
+	category = "Нелегальный Бизнес"
+})
+
+TEAM_CIGAR = DarkRP.createJob("Фарцовщик сигарет", {
+	color = Color(95, 127, 63, 255),
+	model = "models/player/witness.mdl",
+	description = [[
+	Вы изготавливаете сигареты чтобы заработать на раке лёгких с помощью предметов из F4-menu.
+	Ваш бизнес прост - вы просто сидите и заправляете автомат табаком и бумагой и ждёте прибыль.
+	Сигареты можно продать в миниван на рынке!
+	
+	Ваш бизнес нелегален и менты надают вам по шапке если найдут!
+	]],
+	weapons = {"pass_ua"},
+	command = "cigarmaker",
+	max = 2,
+	salary = GAMEMODE.Config.normalsalary,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = true,
+	category = "Нелегальный Бизнес"
+})
+
+TEAM_EVENT = DarkRP.createJob("Ивентор", {
+	color = Color(219, 0, 0, 255),
+	model = "models/player/combine_super_soldier.mdl",
+	description = [[Создавайте ивенты игрокам и выдавайте за них призы!]],
+	weapons = {'med_kit', 'weapon_vape_medicinal'},
+	command = "eventor",
+	max = 0,
+	salary = 0,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = true,
+	customCheck = function(ply) return ply:gp_IsAdmin() end,
+	category = "Администрация"
+})
+
+TEAM_CITYWORKER = DarkRP.createJob("Работник ЖКХ", {
+	color = Color(63, 79, 127, 255),
+	model = {"models/player/group03/male_09.mdl", "models/player/group03/male_08.mdl", "models/player/group03/male_07.mdl", "models/player/group03/male_06.mdl", "models/player/group03/male_03.mdl", "models/player/group03/male_04.mdl"},
+	description = [[
+	По городу произошли происшествия:
+	- Трубы потекли
+	- Сломалась проводка
+	- Случились обвалы
+	
+	Ваша задача ходить по городу и чинить эти неполадки! За работу вам не скромненько платят!
+	]],
+	weapons = {'pass_ua', "cityworker_pliers", "cityworker_shovel", "cityworker_wrench"},
+	command = "jkh",
+	max = 6,
+	salary = 0,
+	admin = 0,
+	vote = false,
+	hasLicense = false,
+	candemote = true,
+	category = "Граждане"
+})
+
+TEAM_KINOLOG = DarkRP.createJob("Кинолог", {
+	color = Color(63, 79, 127, 255),
+	model = {"models/gai_5.mdl"},
+	description = [[
+	НАПИСАТЬ DESCRIPTION!!!
+	]],
+	weapons = {'pass_ua'},
+	command = "kinolog",
+	max = 1,
+	salary = 500,
+	admin = 0,
+	vote = true,
+	hasLicense = true,
+	candemote = true,
+	category = "Правопорядок",
+	canStartVote = function( ply )
+		for k, v in ipairs( ents.FindByClass("player") ) do
+			if v:Team() == TEAM_KINOLOGDOG then 
+				return true
+			end
+		end
+		return false
+	  end,
+	  canStartVoteReason = 'На сервере должна быть собака!'
+})
+
+TEAM_KINOLOGDOG = DarkRP.createJob("Собака Кинолога", {
+	color = Color(63, 79, 127, 255),
+	model = {"models/jwk987/animal/riley.mdl"},
+	description = [[
+	НАПИСАТЬ DESCRIPTION!!!
+	]],
+	weapons = {},
+	command = "kinologdog",
+	max = 1,
+	salary = 0,
+	admin = 0,
+	vote = true,
+	hasLicense = false,
+	candemote = true,
+	category = "Правопорядок",
+	canStartVote = function( ply )
+		for k, v in pairs( ents.FindInBox( ass[game.GetMap()].pos1, ass[game.GetMap()].pos2 ) ) do
+		  if ply == v then
+			  return true
+		  end
+	  	end
+	  	return false
+	end,
+	canStartVoteReason = 'Вы должны нахоидться в отделе МВД чтобы начать голосование!'
 })
 
 --[[---------------------------------------------------------------------------

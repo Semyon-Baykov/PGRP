@@ -64,7 +64,8 @@ properties.Add("givemoney", {
 	end,
 	Receive = function( self, length, ply )
 		local ent = net.ReadEntity()
-		local amount = net.ReadFloat()
+		local amount = math.Round(net.ReadFloat())
+		print(amount)
 
 		if !(self:Filter(ent, ply) && amount) then return end
 

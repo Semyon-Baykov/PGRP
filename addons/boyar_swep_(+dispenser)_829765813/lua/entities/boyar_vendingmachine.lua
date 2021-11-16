@@ -39,7 +39,7 @@ function ENT:Use(_,caller)
 
 		if !caller:HasWeapon('boyar') then
 			notify( caller, 2, 3, bought)
-			takeMoney( caller, 250 )
+			if caller:canAfford(250) then takeMoney( caller, 250 ) end
 			
 			caller:Give( 'boyar' )
 		end

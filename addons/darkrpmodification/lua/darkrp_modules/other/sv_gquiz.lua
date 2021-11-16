@@ -6,7 +6,7 @@ gquiz.question = nil
 
 gquiz.answer = nil
 
-gquiz.winnermoney = 3000
+gquiz.winnermoney = 6500
 
 gquiz.started = 0
 
@@ -52,11 +52,11 @@ function gquiz.start()
   gquiz.makequestion()
   gquiz.print()
 
-  timer.Simple(30,function()
+  timer.Simple(45,function()
     if gquiz.started == 1 then
-      if #player.GetAll() >= 20 then
-      ChatAddText(Color(255,255,0), '[Викторина] ', Color(255,255,255), 'Верных ответов нет. Викторина окончена.')
-    end
+		if #player.GetAll() >= 20 then
+			ChatAddText(Color(255,255,0), '[Викторина] ', Color(255,255,255), 'Верных ответов нет. Викторина окончена.')
+		end
       gquiz.stop()
     end
   end)
@@ -84,6 +84,7 @@ hook.Add( 'PlayerSay', 'GPortalRP_quiz',function(ply, text)
     else
       ply:ChatAddText(Color(255,255,0), '[Викторина] ', Color(255,255,255), 'Ответ неверный.')
   end
+  return ""
 end
 end)
 

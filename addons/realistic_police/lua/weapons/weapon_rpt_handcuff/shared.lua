@@ -40,6 +40,8 @@ function SWEP:PrimaryAttack()
 	Owner.AntiSpam = CurTime() + 1 
 
 	-- Check if the Police Man Can Cuff the player
+	if not ply:IsValid() then return end
+	if ply:isArrested() then return end
 	if not Realistic_Police.CanCuff[team.GetName(Owner:Team())] then 
 		if SERVER then 
 			Realistic_Police.SendNotify(Owner, Realistic_Police.Lang[61][Realistic_Police.Langage]) 

@@ -122,7 +122,7 @@ function ENT:DrawTranslucent()
 			
 			
 			-- DRAW MONEY MINED
-			draw.DrawText( "БИТКОЙНОВ:", "BITMINER_ScreenText20b", 295, 160, color_white, TEXT_ALIGN_CENTER )
+			draw.DrawText( "КУРС:", "BITMINER_ScreenText20b", 295, 160, color_white, TEXT_ALIGN_CENTER )
 			if bitcoin_rate then
 				draw.DrawText( "1BTC = "..DarkRP.formatMoney( bitcoin_rate ), "BITMINER_ScreenText20b", 295, 210, color_white, TEXT_ALIGN_CENTER )
 			end

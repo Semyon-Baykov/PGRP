@@ -27,13 +27,13 @@ local function StartElections()
 
 	vote_poststarted = true
 
-	ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'До начала выборов на пост Мэра осталась 1 минута.' )
+	ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'До начала выборов на пост Мэра осталась 1 минута.' )
 
 	timer.Simple( 60, function()
 
 		if #tbl < 1 then
 
-			ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'Мэр не избран, недостаточно кандидатов.' )
+			ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'Мэр не избран, недостаточно кандидатов.' )
 
 			vote_poststarted = false
 
@@ -47,7 +47,7 @@ local function StartElections()
 
 			local ply = player.GetByUniqueID( tbl[1].id )
 			if ply:IsPlayer() then
-				ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, ply:Nick()..' становится Мэром всвязи с нехваткой кандидатов.' )
+				ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, ply:Nick()..' становится Мэром всвязи с нехваткой кандидатов.' )
 
 				ply:changeTeam( TEAM_MAYOR, true )
 			end
@@ -84,13 +84,18 @@ local function StartElections()
 		end
 
 		timer.Simple( 60, function()
+		
+			if not IsValid(ply) then 
+				vote_started = false
+				return 
+			end
 
 			local winner_votes = 0
 			local winner
 
 			vote_started = false
 			
-			ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'Результаты выборов: ' )
+			ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'Результаты выборов: ' )
 
 			for k,v in ipairs( tbl ) do
 
@@ -174,24 +179,24 @@ end )
 function meta:JoinElections( str )
 
 	if team.NumPlayers( TEAM_MAYOR ) > 0 then
-		self:ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'Мэр уже избран' )
+		self:ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'Мэр уже избран' )
 		return false
 	end
 
 	if vote_started then
-		self:ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'Выборы уже начались' )
+		self:ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'Выборы уже начались' )
 		return false
 	end
 
 	for k, v in ipairs( tbl ) do
 		if v.id == self:UniqueID() then
-			self:ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'Вы уже участвуете в выборах' )
+			self:ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'Вы уже участвуете в выборах' )
 			return false
 		end
 	end
 
 	if string.len( str ) > 1000 then
-		self:ChatAddText( Color( 255, 0, 0 ), '[Выборы] ', color_white, 'Слишком длинный агитационный текст' )
+		self:ChatAddText( Color( 139, 0, 0 ), '[Выборы] ', color_white, 'Слишком длинный агитационный текст' )
 		return false
 	end
 

@@ -21,4 +21,4 @@ ENT.pName = 'Sapphire Printer'
 ENT.pColor = Color(15, 82, 186, 255)
 
 --> Defaults
-ENT.pQuality = 235
+ENT.pQuality = 250

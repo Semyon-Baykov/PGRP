@@ -8,10 +8,10 @@ aphone.LanguageTable = {
     // APP Names
     Calculator = "Калькулятор",
     Camera = "Камера",
-    Contacts = "Контракты",
+    Contacts = "hunter_prey.exe",
     Cookies = "Cookies",
     Darkweb = "Darkweb",
-    Gallery = "Галлерея",
+    Gallery = "Галерея",
     GPS = "GPS",
     SMS = "CМС",
     Radio = "Радио",
@@ -113,7 +113,7 @@ aphone.LanguageTable = {
 
     // Darkweb
     Darkweb_Title = "darkweb",
-    Darkweb_Contracts = "контракты",
+    Darkweb_Contracts = "hunter_prey.exe",
     Darkweb_Confirm = "подтвердить",
     Darkweb_name = "имя",
     Darkweb_price = "цена",

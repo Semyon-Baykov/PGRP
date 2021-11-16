@@ -117,7 +117,7 @@ add_defcar( 17, 'sim_fphys_rolls_phantom_viii', 'Rolls-Royce Phantom', 			'model
 --add_doncar( 1, 'crsk_bmw_z4e89', 'BMW Z4', 'models/crsk_autos/bmw/z4e89_2012.mdl', 'scripts/vehicles/crsk_autos/crsk_bmw_z4e89.txt', 250, 'BMW Z4 — двухместный родстер, выпускавшийся немецкой компанией BMW.' )
 ------------------------Государственный транспорт------------------------
 hook.Add( 'loadCustomDarkRPItems', 'gpcard_load', function()
-	add_govcar(1, "sim_fphys_vaz-2114_pol", "ВАЗ-2114", "models/crsk_autos/avtovaz/2114_trafficpolice.mdl", "scripts/vehicles/crsk_autos/crsk_vaz_2114.txt", function( ply ) return ply:Team() == TEAM_DPS end, "Полиция", 0)
-	add_govcar(2, "sim_fphys_uaz_patriot_pol", "УАЗ Патриот", "models/crsk_autos/uaz/patriot_2014_police.mdl", "scripts/vehicles/crsk_autos/crsk_uaz_patriot_2014.txt", function( ply ) return ply:isCP() == true end, "Полиция", 0)
+	add_govcar(1, "sim_fphys_vaz-2114_pol", "ВАЗ-2114", "models/crsk_autos/avtovaz/2114_trafficpolice.mdl", "scripts/vehicles/crsk_autos/crsk_vaz_2114.txt", function( ply ) return ply:Team() == TEAM_DPS end, "Стационарный пост полиции", 0)
+	add_govcar(2, "sim_fphys_uaz_patriot_pol", "УАЗ Патриот", "models/crsk_autos/uaz/patriot_2014_police.mdl", "scripts/vehicles/crsk_autos/crsk_uaz_patriot_2014.txt", function( ply ) return ply:isCP() or ply:Team() == TEAM_MAYOR end, "Стационарный пост полиции", 0)
 	add_govcar(3, "sim_fphys_uaz_patriot", "УАЗ Патриот", "models/crsk_autos/uaz/patriot_2014_investigation.mdl", "scripts/vehicles/crsk_autos/crsk_uaz_patriot_2014.txt", function( ply ) return ply:rg_IsCMD() or ply:GetNWString( 'nrg_access_veh', false ) end, "Росгвардия", 0)
 end)

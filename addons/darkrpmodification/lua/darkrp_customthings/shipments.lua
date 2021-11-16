@@ -25,6 +25,16 @@ AddCustomShipment("Борщ", "models/arskvshborsch/borsch.mdl", "ent_borsch_rus
 AddCustomShipment("Тушенка", "models/sngration/belorus_can.mdl", "ent_tyshenka_rus", 3000, 10, false, 3000, false, {TEAM_COOK})
 ----------------------------------------------------------------------------------------------------
 
+DarkRP.createShipment("Разведовательный Бинокль", {
+	entity = "weapon_rpw_binoculars",
+	model = "models/weapons/w_binocularsbp.mdl",
+	price = 17500,
+	amount = 1,
+	seperate = false,
+	noship = false,
+	allowed = {TEAM_TRADE},
+})
+
 DarkRP.createShipment("Отмычка", {
 	model = "models/weapons/w_crowbar.mdl", 
 	entity = "lockpick",
@@ -46,7 +56,37 @@ DarkRP.createShipment("Fidget Spinner", {
 	allowed = {TEAM_TRADE},
 })
 
+DarkRP.createShipment("Два Обычных Вейпа", {
+	entity = "weapon_vape",
+	model = "models/swamponions/vape.mdl",
+	price = 50000,
+	amount = 2,
+	seperate = false,
+	noship = false,
+	allowed = {TEAM_TRADE},
+})
+DarkRP.createShipment("Многовкусовой вейп", {	
+	entity = "weapon_vape_juicy",
+	model = "models/swamponions/vape.mdl",
+	price = 75000,
+	amount = 1,
+	seperate = false,
+	noship = false,
+	allowed = {TEAM_TRADE},
+})
+
 ----------------------------------------------------------------
+
+DarkRP.createShipment("Нож", {
+	model = "models/weapons/w_knife_ct.mdl",
+	entity = "weapon_knife",
+	price = 4500,
+	amount = 1,
+	seperate = false,
+	pricesep = 105000,
+	noship = false,
+	allowed = {TEAM_GUN}
+})
 
 DarkRP.createShipment("Honey Badger", {
 	model = "models/weapons/tfa_w_aac_honeybadger.mdl",

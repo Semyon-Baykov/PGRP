@@ -1,0 +1,10 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/svidetel/hair"
+	"$halflambert" 1
+	$nocull 1
+$alphatest 1
+$allowalphatocoverage 1
+
+
+}

@@ -74,7 +74,7 @@ SWEP.AutoDetectMuzzleAttachment = true --For multi-barrel weapons, detect the pr
 SWEP.MoveSpeed = 1 --Multiply the player's movespeed by this.
 SWEP.IronSightsMoveSpeed = 0.8 --Multiply the player's movespeed by this when sighting.
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull
-SWEP.Primary.Damage		= 28	-- Base damage per bullet
+SWEP.Primary.Damage		= 35	-- Base damage per bullet
 SWEP.Primary.Spread		= .01	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
 SWEP.Primary.IronAccuracy = .001 -- Ironsight accuracy, should be the same for shotguns
 

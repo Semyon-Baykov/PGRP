@@ -36,6 +36,17 @@ function ENT:SpawnFunction(v, tr)
 end
 
 function ENT:Use(ply)
+	local policemen_count = 0
+	for k, v in pairs(player.GetAll()) do
+	    if v:Team() == TEAM_POLICE or v:Team() == TEAM_DPS or v:Team() == TEAM_PPS or v:Team() == TEAM_CHIEF or v:Team() == TEAM_OMON or v:Team() == TEAM_FBI then 
+			policemen_count = policemen_count + 1 
+		end
+	end
+	if policemen_count < 4 then 
+		DarkRP.notify(ply, 1, 3, "На сервере слишком мало полицейских! (Нужно 4+)")
+		return
+	end
+
 	local gang = gp_gangsys_new.gang_table and gp_gangsys_new.gang_table[ply:getPlayerGangID()]
 	if ply:Team() != TEAM_MOB then
 		 DarkRP.notify(ply, 1, 3, "Только Глава ОПГ может запустить ограбление.")
@@ -47,10 +58,7 @@ function ENT:Use(ply)
         DarkRP.notify(ply, 1, 3, "Арестованный не может ограбить банк!")
 		return 
 	elseif (#player.GetAll() < BankRS_Config["Robbery"]["Min_Players"]) then
-		DarkRP.notify(ply, 1, 3, "На сервере слишком мало игроков для запуска ограбления!")
-	    return
-	elseif (not BankRS_CountTeamNumber()) then
-		DarkRP.notify(ply, 1, 3, "На сервере слишком мало полицейских для запуска ограбления!")
+		DarkRP.notify(ply, 1, 3, "На сервере слишком мало игроков для запуска ограбления! (Нужно 10+)")
 	    return
 	elseif (timer.Exists("BankRS_RobberyTimer")) then
 		DarkRP.notify(ply, 1, 3, "Кто-то уже грабит банк!")
@@ -62,8 +70,9 @@ function ENT:Use(ply)
     
     DarkRP.notify(ply, 0, 3, "Вы запустили ограбление банка!")
     DarkRP.notify(ply, 0, 5, "Не отходите далеко от хранилища!!")
-	
-
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-robbery] ', Color( 255, 255, 255 ), 'Вы начали ограбление банка!' )
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-robbery] ', Color( 255, 255, 255 ), 'Не отходите далеко от хранилища!' )
+	ply:ChatAddText( Color( 139, 0, 0 ), '[PGRP-robbery] ', Color( 255, 255, 255 ), 'Вся полиция едет к вам!' )
 	
 	self:DuringRobbery()
 	ply:wanted(nil, "Ограбление банка")
@@ -136,10 +145,33 @@ function ENT:DuringRobbery()
 		elseif (Robber:GetPos():Distance(self:GetPos()) > BankRS_Config["Robbery"]["Max_Distance"]) then
 		    DarkRP.notifyAll(1, 5, Robber:Nick().." ушел слишком далеко от хранилища во время ограбления!")
 			self:DuringCooldown()
+		elseif Robbery < 15 then
+			for k, v in pairs(ents.FindInSphere( Robber:GetPos(), 25000 )) do
+				if v:IsPlayer() and v:Team() == TEAM_GANG then
+					v:ChatAddText( Color( 139, 0, 0 ), '[PGRP-robbery] ', Color( 255, 255, 255 ), 'Ограбление почти завершено! Встаньте ближе к главе банды что-бы получить деньги!' )
+				end 
+			end
 		elseif (Robbery <= 0) then
-		    DarkRP.notifyAll(0, 5, Robber:Nick().." успешно ограбил банк!")
+		    DarkRP.notifyAll(0, 5, Robber:Nick().." и его банда успешно ограбили банк!")
 			
-			Robber:addMoney(self:GetNWInt("CurrentReward"))
+			--[[
+			local persons_around_bank = 0
+			for k, v in pairs(ents.FindInSphere( Robber:GetPos(), 5000 )) do
+				if v:IsPlayer() and v:Team() == TEAM_GANG then
+					persons_around_bank = persons_around_bank + 1
+				end 
+			end
+			local payout = 250000 / persons_around_bank
+			for k, v in pairs(ents.FindInSphere( Robber:GetPos(), 5000 )) do
+				if v:IsPlayer() and v:Team() == TEAM_GANG then
+					v:addMoney(payout)
+					v:ChatAddText( Color( 139, 0, 0 ), '[PGRP-robbery] ', Color( 255, 255, 255 ), 'Вы получили '..payout..' за успешное ограбление банка.' )
+				end
+			end
+			--]]
+			
+			Robber:addMoney(350000)
+			Robber:ChatAddText( Color( 139, 0, 0 ), '[PGRP-robbery] ', Color( 255, 255, 255 ), 'Вы получили 150,000 за успешное ограбление банка.' )
 			
 			self:SetNWInt("CurrentReward", BankRS_Config["Interest"]["Base_Reward"])
 			self:DuringCooldown()

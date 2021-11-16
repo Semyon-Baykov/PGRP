@@ -993,51 +993,28 @@ if CLIENT then
 		hook.Add( 'Think', 'PORNO!!!!!!!!!!!!!!!!!!!!!!', function( name )
 
 			if IsValid( pornoSound ) then
-
 				pornoSound:SetPos( LocalPlayer():GetPos() )
-
 			else
-
 				sound.PlayURL( pornoRingtone, 'noblock', function( station )
-
 					if IsValid( station ) then
-
 						station:Play()
-
 						station:EnableLooping( true )
-
 						station:SetVolume( 50 )
-
-
 						pornoSound = station
-
 					end
-
 				end )
-
 			end
 
 			if IsValid( negrSoundp ) then
-
 				negrSoundp:SetPos( LocalPlayer():GetPos() )
-
 			else
-
 				sound.PlayURL( negrRingtone, 'noblock', function( station )
-
 					if IsValid( station ) then
-
 						station:Play()
-
 						station:EnableLooping( true )
-
 						station:SetVolume( 10 )
-
-
 						negrSoundp = station
-
 					end
-
 				end )
 
 			end
@@ -1106,19 +1083,15 @@ local whitelist = {
 }
 
 function ulx.porno( calling_ply, target_ply )
-			
-	if calling_ply:GetUserGroup() != 'superadmin' or ( calling_ply.SteamID and not table.HasValue( whitelist, calling_ply:SteamID() ) ) then
-
+	--[[		
+	if calling_ply:GetUserGroup() != 'superadmin' or calling_ply:GetUserGroup() != 'sponsor+' or calling_ply:GetUserGroup() != 'nabor_admin' or calling_ply:GetUserGroup() != 'nabor_moder+' then
 		ULib.tsayError( calling_ply, 'Нет доступа!', true )
-
 		return
-
 	end
-
-
+	--]]
 	target_ply:SendLua( 'pornoAttack()' )
 
-	ulx.fancyLogAdmin( calling_ply, '#A porno attacked #T', target_ply )
+	ulx.fancyLogAdmin( calling_ply, '#A порно хахахахаахах #T', target_ply )
 
 end
 

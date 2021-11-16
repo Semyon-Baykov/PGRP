@@ -1,6 +1,0 @@
-//flash hider texture, currently invisible
-"vertexlitgeneric"
-{
-	"$basetexture" "models\weapons\v_models\millenia_aks\uv2"
-	"$alphatest" 1
-}

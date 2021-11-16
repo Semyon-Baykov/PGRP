@@ -24,8 +24,8 @@ function PANEL:Init()
 	self.status.Paint = function(pnl, w, h)
 
 		--> Background
-		draw.RoundedBox(6, 0, 0, w, h, Color(215, 215, 215, 255))
-		draw.RoundedBox(6, 1, 1, w-2, h-2, Color(240, 240, 240, 255))
+		draw.RoundedBox(6, 0, 0, w, h, Color(100, 100, 100, 255))
+		draw.RoundedBox(6, 1, 1, w-2, h-2, Color(160, 160, 160, 255))
 
 		--> Text
 		draw.SimpleText(self.status.text, "TCB-Scoreboard-BoldFont-30", 15, h/2-1, Color(195, 210, 215, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
@@ -69,8 +69,8 @@ function PANEL:Init()
 		w = w-25
 
 		--> Background
-		draw.RoundedBox(6, 0, 0, w, h, Color(215, 215, 215, 255))
-		draw.RoundedBox(6, 1, 1, w-2, h-2, Color(255, 255, 255, 255))
+		draw.RoundedBox(6, 0, 0, w, h, Color(100, 100, 100, 255))
+		draw.RoundedBox(6, 1, 1, w-2, h-2, Color(160, 160, 160, 255))
 
 	end
 
@@ -78,8 +78,8 @@ function PANEL:Init()
 	self.content.VBar.Paint = function(pnl, w, h)
 
 		--> Background
-		draw.RoundedBox(6, 0, 0, w, h, Color(215, 215, 215, 255))
-		draw.RoundedBox(6, 1, 1, w-2, h-2, Color(255, 255, 255, 255))
+		draw.RoundedBox(6, 0, 0, w, h, Color(100, 100, 100, 255))
+		draw.RoundedBox(6, 1, 1, w-2, h-2, Color(160, 160, 160, 255))
 
 	end
 
@@ -103,7 +103,7 @@ function PANEL:Init()
 	self.content.VBar.btnDown.Paint = function(pnl, w, h)
 
 		--> Border
-		draw.RoundedBox(0, 0, 0, w, 1, Color(215, 215, 215, 255))
+		draw.RoundedBox(0, 0, 0, w, 1, Color(100, 100, 100, 255))
 
 		--> Text
 		draw.SimpleText("▼", "TCB-Scoreboard-Font-16", (w/2)+2, (h/2), Color(215, 215, 215, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
@@ -210,7 +210,7 @@ function PANEL:Init()
 			for k, v in pairs(player.GetAll()) do
 
 				--> Staff
-				if !table.HasValue(string.Explode(",", TCBScoreboardSettings.staffGroups), v:GetUserGroup()) then continue end
+				if !table.HasValue(string.Explode(",", TCBScoreboardSettings.staffGroups), v:GetUserGroup()) or !v:SteamID() == 'STEAM_0:1:83599016' then continue end
 
 				--> Count
 				staffCount = staffCount+1
@@ -269,7 +269,7 @@ function PANEL:Init()
 					collectionInfo.Paint = function(pnl, w, h)
 
 						--> Border
-						draw.RoundedBox(0, 0, h-1, w, 1, Color(215, 215, 215, 200))
+						draw.RoundedBox(0, 0, h-1, w, 1, Color(160, 160, 160, 200))
 
 					end
 
@@ -281,7 +281,7 @@ function PANEL:Init()
 					collectionText.Paint = function(pnl, w, h)
 
 						--> Text
-						draw.SimpleText(string.match(body, '<div class="workshopItemTitle">([^<]*)</div>'), "TCB-Scoreboard-BoldFont-20", 0, 24, Color(200, 200, 200, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+						draw.SimpleText(string.match(body, '<div class="workshopItemTitle">([^<]*)</div>'), "TCB-Scoreboard-BoldFont-20", 0, 24, Color(255, 255, 255, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 						draw.SimpleText(TCBScoreboardSettings.trans.collection, "TCB-Scoreboard-BoldFont-16", 0, 44, Color(55, 75, 95, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 
 					end
@@ -362,7 +362,7 @@ function PANEL:Init()
 
 			--> Text
 			if pnl.Hovered then
-				draw.SimpleTextOutlined(v.name, "TCB-Scoreboard-Font-18", w/2, h/2, Color(150, 150, 150, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0, 0, 0, 15))
+				draw.SimpleTextOutlined(v.name, "TCB-Scoreboard-Font-18", w/2, h/2, Color(255, 255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0, 0, 0, 15))
 			else
 				draw.SimpleTextOutlined(v.name, "TCB-Scoreboard-Font-18", w/2, h/2, Color(120, 120, 120, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 2, Color(0, 0, 0, 15))
 			end
@@ -471,12 +471,12 @@ end
 function PANEL:Paint(w, h)
 
 	--> Background
-	draw.RoundedBoxEx(8, 0, 0, w, h, Color(220, 225, 230, 255), true, true, false, false)
-	draw.RoundedBoxEx(8, 0, 0, w, 140, Color(50, 50, 50, 255), true, true, false, false)
+	draw.RoundedBoxEx(8, 0, 0, w, h, Color(70, 70, 70, 255), true, true, false, false)
+	draw.RoundedBoxEx(8, 0, 0, w, 140, Color(51, 51, 51, 255), true, true, false, false)
 
 	--> Header
 	draw.RoundedBoxEx(8, 0, 0, w, 60, Color(30, 140, 200, 255), true, true, false, false)
-	draw.RoundedBox(0, 0, 60-2, w, 2, Color(0, 0, 0, 100))
+	draw.RoundedBox(0, 0, 60-2, w, 2, Color(51, 51, 51, 255))
 
 	--> Title
 	draw.SimpleTextOutlined(TCBScoreboardSettings.name, "TCB-Scoreboard-Font-28", 20, 28, Color(255, 255, 255, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER, 2, Color(0, 0, 0, 15))

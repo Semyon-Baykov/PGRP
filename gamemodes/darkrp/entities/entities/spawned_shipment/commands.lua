@@ -49,6 +49,11 @@ local function createShipment(ply, args)
 
     local phys = crate:GetPhysicsObject()
     phys:Wake()
+	
+	print(id)
+	print(ply)
+	print(pos)
+	
 end
 DarkRP.defineChatCommand("makeshipment", createShipment, 0.3)
 

@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/svidetel/boots"
+	"$bumpmap"     "models/svidetel/boots_n"
+	"$halflambert" 1
+}

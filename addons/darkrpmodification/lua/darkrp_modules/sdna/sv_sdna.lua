@@ -194,7 +194,7 @@ end
 local removebodies = ulx.command("Utility", "ulx removebodies", ulx.removebodies, "!removebodies")
 removebodies:defaultAccess(ULib.ACCESS_SUPERADMIN)
 removebodies:help("Удалить трупы игроков.")
-hook.Add('PlayerDeath', 'SDNA', SDNA.CreateRagdoll)
+--hook.Add('PlayerDeath', 'SDNA', SDNA.CreateRagdoll)
 
     -- hook.Add( 'Think', 'SDNA', function() хуйня все это
 

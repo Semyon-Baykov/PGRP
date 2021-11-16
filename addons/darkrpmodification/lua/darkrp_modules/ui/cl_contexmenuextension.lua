@@ -23,6 +23,22 @@ local function Request(title, text, func)
 	end
 end
 
+local function isGlavno()
+	if LocalPlayer():Team() == TEAM_NRG1 and LocalPlayer():rg_GetLVL() > 11 then
+		return true
+	else
+		return false
+	end
+end
+
+local function isNachalOrMayor()
+	if LocalPlayer():Team() == TEAM_CHIEF or LocalPlayer():Team() == TEAM_MAYOR then return true end
+end
+
+local function isEntFreezeAllowed()
+	if LocalPlayer():Team() == TEAM_BITCOIN or LocalPlayer():Team() == TEAM_CIGAR then return true end
+end
+
 local function isCP()
 	return LocalPlayer():isCP()
 end
@@ -120,6 +136,38 @@ Option('Управление росгвардией', "icon16/user_add.png", fun
 end, isRGCmd)
 
 Spacer(isRGCmd)
+
+
+Option('Вызвать всех сотрудников', 'icon16/error.png', function()
+	for k, v in pairs(player.GetAll()) do
+		if v:Team() == TEAM_NRG1 then
+			LocalPlayer():ConCommand( "sendpos "..v:UserID() )
+			v:PrintMessage( HUD_PRINTTALK, 'Один из офицеров срочно вызвает всех сотрудников к себе!' )
+		end
+	end
+end, isGlavno)
+
+Spacer(isGlavno)
+
+Option('Вызвать всех полицейских', 'icon16/error.png', function()
+	for k, v in pairs(player.GetAll()) do
+		if v:Team() == TEAM_POLICE or v:Team() == TEAM_DPS or v:Team() == TEAM_PPS or v:Team() == TEAM_CHIEF or v:Team() == TEAM_FBI or v:Team() == TEAM_OMON then
+			LocalPlayer():ConCommand( "sendpos "..v:UserID() )
+			v:PrintMessage( HUD_PRINTTALK, 'Начальство срочно вызывает вас к себе!' )
+		end
+	end
+end, isNachalOrMayor)
+
+Spacer(isNachalOrMayor)
+
+Option('Зафризить предмет, на который вы смотрите', 'icon16/stop.png', function()
+	LocalPlayer():ConCommand( 'say !entfreeze' )
+end, isEntFreezeAllowed)
+Option('Расфризить предмет, на который вы смотрите', 'icon16/stop.png', function()
+	LocalPlayer():ConCommand( 'say !entunfreeze' )
+end, isEntFreezeAllowed)
+
+Spacer(isEntFreezeAllowed)
 
 Option('Меню банды', "icon16/user_add.png", function()
 	RunConsoleCommand("gp_gangsys_menu")
@@ -229,10 +277,11 @@ Option( 'Доступ к пропам', 'icon16/user_add.png', function()
 end )
 
 Spacer()
-
+--[[
 Option(C_LANGUAGE_RPNAME, "icon16/user_edit.png", Request(C_LANGUAGE_RPNAME, C_LANGUAGE_RPNAME_DESCRIPTION, function(s)
 	RunConsoleCommand("darkrp", "rpname", s)
 end))
+--]]
 Option('Улучшения персонажа', "icon16/user.png", function()
 	RunConsoleCommand("gp_upg")
 end)

@@ -168,11 +168,11 @@ function Realistic_Police.SaveLoadInfo(ply, bool, info)
         
         -- Save some information of the player ( Weapon , Health & Armor ) 
         ply.RPTInfo = {
-            RArmor = ply:Armor(), 
+            --RArmor = ply:Armor(), 
             RWeapon = WeaponSave,
             Ammo = ply:GetAmmo(), 
             RModel = info and ply:GetModel() or nil, 
-            RHealth = info and ply:Health() or nil,
+            --RHealth = info and ply:Health() or nil,
             RPos = info and ply:GetPos() or nil, 
             RDarkrpVar = info and table.Copy(ply.DarkRPVars) or nil, 
         }
@@ -183,10 +183,10 @@ function Realistic_Police.SaveLoadInfo(ply, bool, info)
         end 
 
         -- Give back the health of the player 
-        ply:SetHealth((ply.RPTInfo["RHealth"] or 100))
+        --ply:SetHealth((ply.RPTInfo["RHealth"] or 100))
 
         -- Give back the armor of the player 
-        ply:SetArmor((ply.RPTInfo["RArmor"] or 0))
+        --ply:SetArmor((ply.RPTInfo["RArmor"] or 0))
         
         -- Set the model of the player    
         if isstring(ply.RPTInfo["RModel"]) then 
@@ -195,7 +195,8 @@ function Realistic_Police.SaveLoadInfo(ply, bool, info)
          
         if istable(ply.RPTInfo["RDarkrpVar"]) then 
             for k,v in pairs(ply.RPTInfo["RDarkrpVar"]) do 
-                ply:setDarkRPVar(k, v)
+                if k == 'money' then continue end
+				ply:setDarkRPVar(k, v)
             end      
         end 
         

@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	"name"		"Bitminers DLC #1"
+	"version"	"1.0.0"
+	"up_date"	"2020"
+	"author_name"	"Crap-Head"
+	"author_url"	"https://www.gmodstore.com/users/crap-head"
+	"info"		""
+}

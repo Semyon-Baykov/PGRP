@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/cf_rollpaper_texture"
+	"$model" 1
+}

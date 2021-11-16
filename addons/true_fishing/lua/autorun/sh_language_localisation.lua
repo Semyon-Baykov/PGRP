@@ -1,0 +1,218 @@
+
+local Languages = {}
+
+function TrueFishLocal(name, ...)
+	return string.format(Languages[TrueFish.LOCALISATION_LANGUAGE][name], ...)
+end
+
+function TrueFishLanguages()
+	return Languages
+end
+
+Languages["English"] =
+{
+cant_afford = "У вас нет на это денег!",
+fish_limit_reached = 'Вы достигли лимита на "%s"',
+fisherman_spots_full = "Вокруг вас нету свободного места! Попробуйте отойти в сторону.",
+bought_gear = 'Вы купили "%s"',
+sold_fish = "Продано! Вы заработали: %s",
+no_water_detected = "Верша должна быть в воде!",
+cant_find_water_surface = "Вы не находитесь рядом с водой!",
+water_surface_shallow = "Слишком мелко!",
+carry_limit_reached = "У вас уже %s! Вы не можете взять больше!",
+no_fish_containers_near = "Рядом с вами нету куллеров, рыбу некуда складывать! Купите куллер и поставьте его рядом с вами!",
+fish_containers_full = "Все куллера рядом с вами переполнены! Возможно пора продать улов...",
+no_fish_bait = "У вас нету приманки! Купите её у рыбацкого нпс и нажмите на неё буквой Е!",
+didnt_catch_anything = "Вы ничего не поймали.",
+money_bag_caught = "Вы поймали чей-то кошелёк! Внутри вы нашли семейное фото и  %s₽",
+fish_caught = 'Вы поймали "%s"',
+empty_fish_containers_near = "Рядом с вами нету куллеров! Купите его что-бы рыба не тухла, пока что вы их просто отпускаете!",
+hook_caught = "Вы что-то поймали! Нажмите на Е!",
+picked_up_fish_bait = "У вас теперь %s приманки.",
+buoy_too_far = "Вы убижали слишком далеко от поплавка!",
+
+fish_market = "Рыбный Рынок",
+no_fish_to_sell = "У вас нету рыбы на продажу!\nПора пойти и наловить себе на обед!",
+reward_txt = "Выплата: %s₽",
+price_txt = "Цена: %s₽",
+purchase_txt = "Купить",
+fish_sells_for = "Эта рыба стоит %s₽",
+sell_all = "Продать",
+fisherman = "Рыбацкий НПС",
+job_not_allowed = 'Вы можете рыбачить только за работу "Рыбак"',
+
+deploy_fish_cage = "Выставить вершу",
+collect_fish = "Собрать рыбу",
+close_menu = "Закрыть",
+untie_fish_cage = "Отвязать вершу" ,
+tie_down_fish_cage = "Привязать вершу",
+discard_fish = "Выпустить %s",
+untie_fish_container = "Отвязать куллер",
+tie_down_fish_container = "Привязать куллер",
+empty_container_text = "Выпустить всю рыбу в контейнере",
+retrieve_fish_cage = "Забрать вершу",
+
+fishing_rod_phys_tip = "Нажмите R что-бы изменить силу заброса",
+throw_str = "Сила заброса",
+throw_desc = "Выставляйте силу заброса - чем выше, тем дальше",
+fishing_hud = "Ловим...",
+
+fish_finder_no_fish = "Нету воды",
+fish_finder_depth_text = "Глубина:",
+}
+
+Languages["French"] =  
+{  
+cant_afford = "Vous ne pouvez pas faire ça!",  
+fish_limit_reached = "Vous avez atteint votre limite de %s !",  
+fisherman_spots_full = "Impossible de trouver un endroit vide près du pêcheur!",  
+bought_gear = "Tu as acheté %s!",  
+sold_fish = "Vous avez fait $%s pour avoir vendu votre poisson!",  
+no_water_detected = "Aucune eau détectée sous la cage!",  
+cant_find_water_surface = "Impossible de trouver la surface de l'eau!",  
+water_surface_shallow = "C'est trop peu profond!",  
+carry_limit_reached = "Tu as déjà %s poissons!",  
+no_fish_containers_near = "Il n'y a pas de conteneurs de poissons près de vous!",  
+fish_containers_full = "Tous les conteneurs de poissons à proximité sont pleins!",  
+no_fish_bait = "Vous n'avez pas d'appât de poisson!",  
+didnt_catch_anything = "Vous n'avez rien attrapé.",  
+money_bag_caught = "Vous avez attrapé un sac d'argent avec $%s dedans!",  
+fish_caught = "Vous avez attrapé un %s!",  
+empty_fish_containers_near = "Impossible de trouver des conteneurs vides près de chez vous pour mettre du poisson!",  
+hook_caught = "Vous avez attrapé quelque chose! Utilisez (E) sur votre hammeçon.",  
+picked_up_fish_bait = "Vous avez maintenant %s Appât de poisson.",  
+buoy_too_far = "Trop loin de la bouée!",  
+ 
+fish_market = "Marché aux poissons",  
+no_fish_to_sell = "Vous n'avez pas de\npoisson à vendre",  
+reward_txt = "Récompense: $%s",  
+price_txt = "Prix: $%s",  
+purchase_txt = "Achat",  
+fish_sells_for = "Votre poisson se vend pour $%s",  
+sell_all = "Tout vendre",  
+fisherman = "Pêcheur",  
+job_not_allowed = "Seuls les %s sont autorisés à pêcher!",
+ 
+deploy_fish_cage = "Déployer la cage de poisson",  
+collect_fish = "Recueillir des poissons",  
+close_menu = "Fermer le menu",  
+untie_fish_cage = "Détacher la cage à poisson" ,  
+tie_down_fish_cage = "Attachez la cage de poisson",  
+discard_fish = "Jeter %s",  
+untie_fish_container = "Détacher le Conteneur de poisson",  
+tie_down_fish_container = "Attacher le Conteneur de poisson",  
+empty_container_text = "Conteneur vide",  
+retrieve_fish_cage = "Récupérer la cage de poisson",  
+ 
+fishing_rod_phys_tip = "Vous pouvez appuyer sur R(Reload) Pour ajuster la force de lancer de la canne à pêche.",  
+throw_str = "Force de jet",  
+throw_desc = "Choisissez la difficulté à jeter votre canne à pêche. Un nombre plus élevé signifie que votre hammeçon sera jeté plus loin.",  
+fishing_hud = "Pêche",  
+
+fish_finder_no_fish = "Il ñ'y a\npas de poisson",
+fish_finder_depth_text = "Profondeur",
+}
+
+Languages["Lithuanian"] =
+{
+cant_afford = "Tu negali to išsimokėti!",
+fish_limit_reached = "Jau pasiekiai %s limitą!",
+fisherman_spots_full = "Negalima surasti laisvos vietos prie Žvejybininko!",
+bought_gear = "Tu nusipirkai %s!",
+sold_fish = "Gavai $%s už žuvų pardavimą!",
+no_water_detected = "Vanduo nebuvo rastas po tavo žuvų narvu!",
+cant_find_water_surface = "Nebuvo galima rasti vandens paviršiaus!",
+water_surface_shallow = "Čia yra perdaug nuoseklu!",
+carry_limit_reached = "Tu jau turi %s žuvų!",
+no_fish_containers_near = "Prie tavęs nėra Žuvų Konteinerio!",
+fish_containers_full = "Visi Žuvų Konteineriai, kurie yra prie tavęs, yra pilni!",
+no_fish_bait = "Tu neruti Žuvų Masalo. Panaudok Masalą!",
+didnt_catch_anything = "Nieko nepagavai.",
+money_bag_caught = "Tu pagavai Pinigų Maišą, kuriame buvo $%s!",
+fish_caught = "Tu pagavai %s!",
+empty_fish_containers_near = "Nebuvo galima rasti tušia Žuvų Konteinerį, kuris būtu šalia tavęs!",
+hook_caught = "Tu kažka pagavai! Panaudok(E) savo kablį.",
+picked_up_fish_bait = "Tu dabar turi %s Žuvų Masalo.",
+buoy_too_far = "Per toli nuo plūduro!",
+
+fish_market = "Žuvų Turgus",
+no_fish_to_sell = "Tu neturi jokių žuvų,\nkurias būtu galima parduoti.",
+reward_txt = "Supirkimo kaina: $%s",
+price_txt = "Kaina: $%s",
+purchase_txt = "Pirkti",
+fish_sells_for = "Tavo žuvys parsiduota už $%s",
+sell_all = "Parduoti viską",
+fisherman = "Žvejybininkas",
+job_not_allowed = "Galima žvejoti tik bunant %s darbu!",
+
+deploy_fish_cage = "Paleisti Žuvų Narvą",
+collect_fish = "Surinkti Žuvis",
+close_menu = "Uždaryti Meniu",
+untie_fish_cage = "Atrišti Žuvų narvą" ,
+tie_down_fish_cage = "Pririšti Žuvų Narvą",
+discard_fish = "Išmesti %s",
+untie_fish_container = "Atrišti Žuvų Konteinerį",
+tie_down_fish_container = "Pririšti Žuvų Konteinerį",
+empty_container_text = "Tuščias konteineris",
+retrieve_fish_cage = "Pasiimti Žuvų Narvą",
+
+fishing_rod_phys_tip = "Tu gali paspausti Reload(R). Tai leidžia nustatyti metimo stiprumą.",
+throw_str = "Metimo Stiprumas",
+throw_desc = "Pasirink kaip stipriai mesi kablį. Didesni skaičiai reiškia stipresni metimą.",
+fishing_hud = "Žvėjojema",
+
+fish_finder_no_fish = "Nėra žuvų",
+fish_finder_depth_text = "Gylis",
+}
+
+Languages["Chinese"] = // Translation by MrChen https://steamcommunity.com/id/KiritoLife/
+{
+cant_afford = "你负担不起!",
+fish_limit_reached = "你已经达到你的 %s 极限了!",
+fisherman_spots_full = "在渔夫附近找不到一个空的地方!",
+bought_gear = "你买 %s!",
+sold_fish = "你卖了鱼 人民币%s !",
+no_water_detected = "笼子下面没有水!",
+cant_find_water_surface = "找不到水面!",
+water_surface_shallow = "这太浅了!",
+carry_limit_reached = "你已经有了 %s 鱼!",
+no_fish_containers_near = "你身边没有鱼容器!",
+fish_containers_full = "附近所有的鱼容器都满了!",
+no_fish_bait = "你没有鱼饵,使用一些!",
+didnt_catch_anything = "你什么也没钓到.",
+money_bag_caught = "你抓住了一个里面有 人民币%s 的钱袋!",
+fish_caught = "你抓到了 %s!",
+empty_fish_containers_near = "在你附近找不到空的容器放鱼!",
+hook_caught = "你抓到什么了! 使用(E) 获取.",
+picked_up_fish_bait = "你现在有 %s 鱼饵.",
+buoy_too_far = "离浮标太远!",
+
+fish_market = "鱼市",
+no_fish_to_sell = "You have no fish\nto sell",
+reward_txt = "奖赏: $%s",
+price_txt = "价格: $%s",
+purchase_txt = "购买",
+fish_sells_for = "你的鱼卖 人民币%s",
+sell_all = "卖掉全部",
+fisherman = "渔夫",
+job_not_allowed = "只有 %s 作业允许钓鱼!",
+
+deploy_fish_cage = "部署鱼笼",
+collect_fish = "捕鱼",
+close_menu = "关闭菜单",
+untie_fish_cage = "解开鱼笼" ,
+tie_down_fish_cage = "绑扎网箱",
+discard_fish = "丢弃 %s",
+untie_fish_container = "解开鱼的容器",
+tie_down_fish_container = "绑鱼的容器",
+empty_container_text = "空集装箱",
+retrieve_fish_cage = "捞鱼笼",
+
+fishing_rod_phys_tip = "你可以按 R(Reload) 调整钓鱼杆的投掷强度.",
+throw_str = "投掷力量",
+throw_desc = "挑你的钓竿有多困难. 更高的数字意味着你的钩子会被扔得更远.",
+fishing_hud = "钓鱼",
+
+fish_finder_no_fish = "没有鱼",
+fish_finder_depth_text = "深度",
+}

@@ -1,19 +1,12 @@
---resource.AddWorkshop( "1970343456" ) --content_1//map
---[[
-resource.AddFile( 'maps/rp_downtown_gp_build901.bsp.bz2' )
-resource.AddFile( 'materials/models/fork/tree_pine04_lowdetail_cluster.vmt' )
-resource.AddFile( 'materials/models/fork/tree_pine04_lowdetail_cluster_card.vmt' )
-resource.AddFile( 'materials/fork/cliff04c.vmt' )
-resource.AddFile( 'materials/fork/cliff04c.vtf' )
-resource.AddFile( 'materials/fork/forest_grass_01_1024.vtf' )
-resource.AddFile( 'materials/fork/tree_pine04_card.vtf' )
-]]--
+-- Workshop
 resource.AddWorkshop("2379496226") -- PGRP Content Pack
+resource.AddWorkshop("2618714241") -- PGRP Content Pack 2
 resource.AddWorkshop("2493084616") -- PGRP Extra Pack
-resource.AddWorkshop("2516832397") -- Map
+resource.AddWorkshop("2579557247") -- Map
+resource.AddWorkshop("2228228831") -- Casino
 -- resource.AddWorkshop("667541995") -- Russian police
-resource.AddWorkshop( "1970333708" ) --content_3
-resource.AddWorkshop("2146413811") -- imao
+-- resource.AddWorkshop( "1970333708" ) --content_3
+-- resource.AddWorkshop("2146413811") -- imao
 -- resource.AddWorkshop( "935754808" ) --car textures									
 -- resource.AddWorkshop("829765813") -- Boyar SWEP (+dispenser)
 -- resource.AddWorkshop("113495466") -- Climb SWEP 2
@@ -26,7 +19,7 @@ resource.AddWorkshop("2146413811") -- imao
 --resource.AddWorkshop( "185609021" )--weather
 resource.AddWorkshop( "546392647" ) --mediaplayer
 -- resource.AddWorkshop( "450599519" ) --camera
--- resource.AddWorkshop( '1094602933' )--gmc
+-- resource.AddWorkshop( '1094602933' )--gmc 2228228831
 
 --[[
 resource.AddWorkshop("1291331734") -- [WSDL] GPortalRP Content #3 (weapons)

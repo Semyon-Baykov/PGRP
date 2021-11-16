@@ -120,7 +120,7 @@ function ENT:Temperature()
 		
 		-- If temperature is at 100, start overheating the mining shelf
 		if self:GetTemperature() >= 100 then
-			local health_to_take = 4 - self:GetFansInstalled()
+			local health_to_take = 10
 
 			self:SetHealth( self:Health() - health_to_take )
 			

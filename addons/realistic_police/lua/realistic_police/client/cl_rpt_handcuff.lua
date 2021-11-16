@@ -155,6 +155,11 @@ function Realistic_Police.Jailer(NamePlayer)
         surface.DrawRect( 0, 0, w, h )
     end 
     RPTClose.DoClick = function()
+
+        net.Start("RealisticPolice:HandCuff")
+            net.WriteString("StopArrest")
+        net.SendToServer()
+
         RPTLFrame:Remove()
         Realistic_Police.Clic()
     end   

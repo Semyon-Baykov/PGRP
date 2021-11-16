@@ -217,7 +217,7 @@ GM.Config.normalsalary					= 45
 -- npckillpay - Sets the money given for each NPC kill.
 GM.Config.npckillpay					= 10
 -- paydelay - Sets how long it takes before people get salary
-GM.Config.paydelay						= 200
+GM.Config.paydelay						= 240
 -- pocketitems - Sets the amount of objects the pocket can carry
 GM.Config.pocketitems					= 10
 -- pricecap - The maximum price of items (using /price)
@@ -231,7 +231,7 @@ GM.Config.quakechance					= 4000
 -- respawntime - Minimum amount of seconds a player has to wait before respawning.
 GM.Config.respawntime					= 1
 -- changejobtime - Minimum amount of seconds a player has to wait before changing job.
-GM.Config.changejobtime					= 60 * 5
+GM.Config.changejobtime					= 180
 -- runspeed - Sets the max running speed.
 GM.Config.runspeed						= 240
 -- runspeed - Sets the max running speed for CP teams
@@ -302,7 +302,7 @@ GM.Config.DisallowDrop = {
 	["gmod_camera"] = true,
 	["gmod_tool"] = true,
 	["keys"] = true,
-	["lockpick"] = true,
+	["lockpick_prem"] = true,
 	["med_kit"] = true,
 	["pocket"] = true,
 	["stunstick"] = true,
@@ -324,6 +324,8 @@ GM.Config.DisallowDrop = {
 	["weapon_rpt_finebook"] = true,
 	["weapon_rpt_handcuff"] = true,
 	["weapon_rpt_stungun"] = true,
+	["defibrillator_advanced"] = true,
+	["med_kit_advanced"] = true
 }
 
 -- The list of weapons people spawn with

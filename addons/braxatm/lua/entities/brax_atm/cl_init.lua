@@ -261,7 +261,7 @@ function ENT:Draw()
 		--self.cursor.y = self.cursor.y + 10
 
 		surface.SetDrawColor(155,155,155,255)
-		surface.SetMaterial(Material("newcity/atm.png"))
+		surface.SetMaterial(Material("newcity/empty_space.png"))
 		surface.DrawTexturedRect( -self.ScreenSize[1]/2, -self.ScreenSize[2]/2, self.ScreenSize[1], self.ScreenSize[2] )
 		
 		-- Bottom bar
@@ -304,8 +304,8 @@ function ENT:Draw()
 			draw.SimpleText(DarkRP.formatMoney(self.InputValue), "AtmFontInput", 30, -49, BalanceColor, TEXT_ALIGN_RIGHT, TEXT_ALIGN_RIGHT)
 		
 			-- Balance
-			draw.SimpleText("#ATM_Balance", "AtmFontInfoBold", 35, -20, Color(0,0,0,255), TEXT_ALIGN_RIGHT, TEXT_ALIGN_RIGHT)
-			draw.SimpleText(DarkRP.formatMoney(BraxATM.UserMoney), "AtmFontInfo", 35, 4, Color(0, 0, 0, 255), TEXT_ALIGN_RIGHT, TEXT_ALIGN_RIGHT)
+			draw.SimpleText("#ATM_Balance", "AtmFontInfoBold", 35, -20, Color(159, 10, 10), TEXT_ALIGN_RIGHT, TEXT_ALIGN_RIGHT)
+			draw.SimpleText(DarkRP.formatMoney(BraxATM.UserMoney), "AtmFontInfo", 35, 4, Color(159, 10, 1), TEXT_ALIGN_RIGHT, TEXT_ALIGN_RIGHT)
 			
 			self:AddNumPad(self.cursor, 40,-55)
 			

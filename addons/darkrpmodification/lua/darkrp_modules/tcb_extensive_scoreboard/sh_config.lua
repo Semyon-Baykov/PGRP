@@ -12,20 +12,22 @@ TCBScoreboardSettings.offlineMdl = "models/player.mdl"
 
 TCBScoreboardSettings.useWorkshop = false
 
-TCBScoreboardSettings.staffGroups = 'superadmin,sponsor+,nab_admin,owner,donsuperadmin,nab_moder+,admin+,admin,nab_moder-,moder'
+TCBScoreboardSettings.staffGroups = 'superadmin,sponsor+,rukovoditel,nab_admin,owner,donsuperadmin,nab_moder+,admin+,admin,nab_moder-,moder'
 
 TCBScoreboardSettings.staffReplace = {}
 TCBScoreboardSettings.staffReplace['superadmin'] = "Создатель"
--- TCBScoreboardSettings.staffReplace['godadmin'] = "Куратор"
 TCBScoreboardSettings.staffReplace['sponsor+'] = "Куратор"
+TCBScoreboardSettings.staffReplace['rukovoditel'] = "Руководитель Росгвардии"
+TCBScoreboardSettings.staffReplace['nab_admin'] = "Заместитель Куратора"
+TCBScoreboardSettings.staffReplace['nab_moder+'] = "Модератор"
+TCBScoreboardSettings.staffReplace['nab_moder-'] = "Младший Модератор"
+
+
 TCBScoreboardSettings.staffReplace['owner'] = "Спонсор"
-TCBScoreboardSettings.staffReplace['nab_admin'] = "Наборный Администратор"
-TCBScoreboardSettings.staffReplace['donsuperadmin'] = "Супер Админ"
-TCBScoreboardSettings.staffReplace['nab_moder+'] = "Наборный Модератор"
-TCBScoreboardSettings.staffReplace['admin+'] = "Админ+"
-TCBScoreboardSettings.staffReplace['admin'] = "Админ"
-TCBScoreboardSettings.staffReplace['nab_moder-'] = "Наборный Модератор"
-TCBScoreboardSettings.staffReplace['moder'] = "Модератор"
+TCBScoreboardSettings.staffReplace['donsuperadmin'] = "[ДОНАТНЫЙ] Супер Админ"
+TCBScoreboardSettings.staffReplace['admin+'] = "[ДОНАТНЫЙ] Админ+"
+TCBScoreboardSettings.staffReplace['admin'] = "[ДОНАТНЫЙ] Админ"
+TCBScoreboardSettings.staffReplace['moder'] = "[ДОНАТНЫЙ] Модератор"
 
 --[[---------------------------------------------------------
 	Name: Collection

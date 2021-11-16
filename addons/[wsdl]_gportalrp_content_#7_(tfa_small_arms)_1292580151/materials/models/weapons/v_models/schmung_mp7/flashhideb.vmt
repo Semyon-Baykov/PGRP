@@ -1,7 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture" "models/weapons\v_models\schmung_mp7\flashhideb"
-	"$envmap" "env_cubemap"
-	"$envmapmask" "models\weapons\v_models\schmung_mp7\flashhideb_ref"
-}
-

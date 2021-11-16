@@ -1,0 +1,21 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\craphead_scripts\the_cocaine_factory\wrench/wrench"
+	"$bumpmap" "models\craphead_scripts\the_cocaine_factory\wrench/wrench_normal"
+	"$halflambert" "1"
+	"$phong" "1"
+	"$phongboost" "1"
+	"$phongexponent" "15"
+	"$phongfresnelranges" "[3 6 10]"
+	
+	"$envmap" "env_cubemap"
+	"$envmapsaturation" ".5"
+	"$envmapcontrast" "1"
+	"$envmapfresnel" ".5"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[.05 .05 .05]"		
+
+	"$rimlight" "1"
+	"$rimlightexponent" "15"
+	"$rimlightboost" ".2"
+}
