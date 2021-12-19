@@ -2,7 +2,11 @@
 resource.AddWorkshop("2379496226") -- PGRP Content Pack
 resource.AddWorkshop("2618714241") -- PGRP Content Pack 2
 resource.AddWorkshop("2493084616") -- PGRP Extra Pack
-resource.AddWorkshop("2579557247") -- Map
+
+-- Maps
+resource.AddWorkshop("2579557247") -- v1
+resource.AddWorkshop("2673252347") -- v2
+
 resource.AddWorkshop("2228228831") -- Casino
 -- resource.AddWorkshop("667541995") -- Russian police
 -- resource.AddWorkshop( "1970333708" ) --content_3
