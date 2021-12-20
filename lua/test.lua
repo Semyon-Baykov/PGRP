@@ -1,1 +1,0 @@
-ChatAddText( 'bb' )

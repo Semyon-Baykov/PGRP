@@ -1,9 +1,0 @@
-"AddonInfo"
-{
-	"name"		"Paramedic Essentials"
-	"version"	"1.0"
-	"up_date"	"2020"
-	"author_name"	"Crap-Head"
-	"author_url"	"https://www.gmodstore.com/users/crap-head"
-	"info"		"This addon adds all the essentials for a good paramedic experience for DarkRP."
-}

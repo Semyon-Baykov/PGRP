@@ -1,6 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture" "models/cf_machine_texture"
-	"$surfaceprop" "Computer"
-	"$model" 1
-}

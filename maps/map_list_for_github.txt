@@ -1,7 +1,0 @@
-There should be:
-
-rp_downtown_gp_build901.bsp 
-rp_downtown_v8g_gp.bsp
-
-But these files are >100mb, so they are not included in this repository.
-These maps also are not mine, so it doesn't even really matter!
