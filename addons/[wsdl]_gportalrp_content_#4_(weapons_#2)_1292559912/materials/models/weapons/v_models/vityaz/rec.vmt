@@ -1,0 +1,11 @@
+VertexLitGeneric
+{
+	"$basetexture" "models\weapons\v_models\Vityaz\rec"
+	"$bumpmap" "models\weapons\v_models\Vityaz\rec_ddn"
+	"$phong" 		"1"
+	"$phongboost"		"0.5"
+	"$phongfresnelranges"	"[1 2 5]"
+	"$phongalbedotint" 		"1"
+	"$halflambert" 		"1"
+	"$phongtint"		"[1 1 0.8]"
+}

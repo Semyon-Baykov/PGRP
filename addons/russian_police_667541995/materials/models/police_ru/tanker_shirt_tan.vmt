@@ -1,0 +1,10 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" 	"\models\police_ru\Tanker_Shirt_Tan"
+	"$bumpmap" "\models\police_ru\Tanker_Shirt_N"
+
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 1
+	"$surfaceprop" "flesh"
+        "$nocull" 1
+}

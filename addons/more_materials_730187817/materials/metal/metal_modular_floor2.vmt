@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "metal/metal_modular_floor2"
+	"$surfaceprop" "Metal"
+}

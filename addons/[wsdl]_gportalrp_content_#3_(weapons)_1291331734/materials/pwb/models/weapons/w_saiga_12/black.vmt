@@ -1,0 +1,6 @@
+Vertexlitgeneric
+{
+
+    // MAIN SETTINGS
+    $basetexture                "pwb\models\weapons\v_saiga_12\black"
+}

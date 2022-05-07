@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"vgui\hud\rpw_binoculars_overlay"
+	"$translucent" 	"1"
+}

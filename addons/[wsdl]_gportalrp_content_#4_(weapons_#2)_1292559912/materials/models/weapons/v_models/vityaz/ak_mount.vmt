@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/weapons/v_models/Vityaz/ak_mount"
+	"$bumpmap" "models/weapons/v_models/Vityaz/ak_mount_norm"
+	"$phongexponent"   "35"
+	"$normalmapalphaenvmask"   "1"
+	"$phong"   "1"
+	"$phongfresnelranges"   "[0.1 0.5 1]"
+
+	"$phongboost"   "1.3"
+
+                "$PhongAlbedoTint"  "1"
+
+                "$rimlight" "1"
+                "$rimlightexponent" "50"	
+                "$rimlightboost" "0.28"
+}

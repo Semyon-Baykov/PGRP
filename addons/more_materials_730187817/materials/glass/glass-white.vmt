@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "glass\glass-white"
+	"$surfaceprop" "Glass"
+	"$envmapsaturation" "[.2 .1 1]"
+	"$envmaptint" "[.3 .3 .3]"
+}

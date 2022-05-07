@@ -1,0 +1,20 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/jesus/jesus_d"
+	"$bumpmap" "models/player/jesus/jesus_n"
+	
+	$phong 1
+	$phongboost "3.4"
+	$phongtint "[.85 .85 1]"
+
+	$phongfresnelranges "[.2 .5 5]"
+	$nodecal 1
+	$ambientocclusion 1
+	$halflambert 0
+	$diffuseexp "1.5"	
+	
+	"$rimlight" "1" 
+	"$rimlightexponent" "4.6" 
+	"$rimlightboost" "0.05" 
+
+}

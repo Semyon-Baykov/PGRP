@@ -1,0 +1,24 @@
+
+VertexLitGeneric
+{
+
+	$basetexture				models/ins1ons/aks74u/v_aks74u_d
+	$bumpmap					models/ins1ons/aks74u/v_aks74u_b
+	
+	$ambientocclusion			1
+	$halflambert				1
+	
+	$phong						1
+	$phongalbedotint			1
+	$phongtint					"[ 0.6 0.8 1 ]"
+	$phongboost					0.01
+	$phongexponent				45
+	$phongfresnelranges			"[ 1 2.5 7 ]"
+	$phongexponenttexture		models/ins1ons/aks74u/v_aks74u_x
+	
+	$detail						detail/metal_detail_01
+	$detailscale				12
+	$detailblendfactor			0.9
+	$detailblendmode			0
+	
+}

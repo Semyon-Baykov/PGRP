@@ -1,0 +1,17 @@
+{
+	"title"   : "Fading Doors",
+	"author"  : "Lex Robinson",
+	"contact" : "lexi@lexi.org.uk",
+	"updated" : "Mar '13",
+	"license" : "MIT",
+	"type"    : "tool",
+	"tags"    : ["roleplay", "build"],
+	"ignore"  :
+	[
+		"LICENSE",
+		"*.mkdn",
+		".git*",
+		"*.jpg",
+		"*.sublime*"
+	]
+}

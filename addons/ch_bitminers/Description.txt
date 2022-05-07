@@ -1,0 +1,143 @@
+﻿Description
+Bitminers is a modern-styled mining system operated by a mining shelf, which are powered by a selection of power sources. The shelf have a 3d2d interactive screen to operates the mining shelf, and upgrades work by drag/drop entities and combining power sources together using power cables.
+
+A combination of an interactive screen and spawn-able upgrades is the essentials of this script. A selection of beautiful custom models and materials gives a full experience when operating the miners and upgrading your shelf.
+
+Generators & solar panels generate power/watt for the shelf and must be maintained for the mining shelf to operate. Shelf can be upgraded from 1 - 16 miners and mining speed depends on the amount of miners installed. UPS upgrades must be installed per 4th miner, to supply power cords to the shelf row and automatically combines to the PC.
+
+Icing on the cake is the RGB upgrade. Installing the upgrade allows you to enable/disable RGB lights in fans, rolling RGB keyboard effects & power buttons that switch colors. Check out the media section to see how cool it looks!
+
+Features
+
+✔️ Total of 13 entities with high quality custom models and materials.
+
+✔️ Upgradeable bitminer shelf.
+
+✔️ Interactive 3d2d screen.
+
+✔️ Custom models & materials.
+
+✔️ Custom animations & blend sequences.
+
+✔️ Upgrade to a total of 16 miners.
+
+✔️ Plug-in & plug-out power cables.
+
+✔️ Bitcoin exchange rate updates in-game.
+
+✔️ Shelf cooling system.
+
+✔️ Temperature system & overheating.
+
+✔️ Fuel system for generator.
+
+✔️ 3 cooling levels.
+
+✔️ Language system supports English, French, Danish & Russian by default.
+
+✔️ Damage system for entities.
+
+✔️ Entities can explode when taking damage & supports my DarkRP Fire System.
+
+✔️ You can configure all entities prices & amounts in bitminers_darkrp_entities.lua.
+
+✔️ Over 30 customizable values for entities are available in bitminers_config.lua.
+
+Upgrades
+
+⚙️ Miners
+
+⚙️ Cooling #1
+
+⚙️ Cooling #2
+
+⚙️ Cooling #3 (Air Conditioning)
+
+⚙️ RGB Lights Upgrade (Fans, Keyboard & More)
+
+⚙️ UPS - 4 Levels (Power Supply)
+
+Power Sources
+
+🔌 Fuel Generator
+
+    Generators can be used to power the bitmining shelf. Runs on fuel that must be refilled every now and then. Fuel generators generate a decent amount of power/watt and makes a noise when active.
+
+
+🔌 Solar Panel
+
+    A quite and powerful power source for your bitmining shelf. Solar panels must be placed outside with a clear trace up to the sky. Solar panels generate more power than fuel generators, and requires no maintenance/refuelling.
+
+
+🔌 RTG
+
+    RTG stands for "Radioisotope Thermoelectric Generator" and is the perfect power source if you want an unmaintained power source that runs by itself in places where solar panels are not practical. The RTG emits slight radioactivity and you're advised to not stay too close to it for a long time. Connect the power source between the RTG and shelf, and move away from it.
+
+
+🔌 Power Combiner
+
+    The power combiner entity isn't a power source in itself. It is used to combine the above power sources into one. You can combine a total of 4 power sources to the combiner. First you connect the combiner to your shelf and then connect power sources to the combiner. This is useful for large mining operations with maxed out mining shelf's.
+
+How It Works
+
+Step 1.
+
+You purchase a bitmining shelf from your F4 menu to "host" the mining operation. The shelf requires a power source, that you must connect using the power cables.
+
+Once the power source is active, the shelf can be powered on by using the interactive 3d2d screen.
+
+You can connect a power source (generator, solar panel, rtg) directly to the shelf for "smaller" operations. If you connect a power combiner to the shelf, then you can connect multiple power sources to the combiner.
+
+Step 2.
+
+Once active it can be upgraded and must be maintained. Temperature rise the more miners you have and your shelf risks overheating if you don't buy cooling upgrades.
+
+There are 3 levels of cooling which can be purchased in the F4 menu. Drag and drop the shelf to upgrade and the screen will show your level accordingly and cool down better.
+
+NOTE: Miners can still overheat with full cooling and max miners. Turning off the mining shelf entirely in the right corner on screen will also cool down the shelf while it's turned off!
+
+Step 3.
+
+Power sources work differently and generates different watts/per sec. Fuel generator must be maintained, while solar panel must be placed outside and the RTG is unmaintained.
+
+Drag a power cable to a power source and then attach the other end of the cable to the shelf. Solar panels and RTG are automatically on once connected, the generator must be filled with fuel and turned on.
+
+Step 4.
+
+Buy single miners from the F4 menu to upgrade the shelf with more miners.
+
+UPS upgrades are available as power supply to the shelf. One power supply (UPS) enables a new row of 4 miners.
+
+RGB upgrade beautifully lights up the shelf, fans, keyboard and power supplies. Can be turned on/off from the shelf screen.
+
+Installation & Content
+
+This addon supports DarkRP 2.7.0+
+
+Extract "ch_bitminers" to addons!
+
+Once you've done that, you can find the entities in your F4 menu. Everything is automatically added to your F4 in the category "Bitminer Equipment"
+
+CONTENT
+
+Only custom models and materials are used for this script. Script content can be found at:
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=2072136134
+
+Make sure to add this to your servers workshop collection as well.
+
+Customizing
+
+To customize the general settings, go to ch_bitminers/lua/ch_bitminers/shared/bitminers_config.lua
+
+To customize the darkrp entities, go to ch_bitminers/lua/ch_bitminers/shared/bitminers_darkrp_entities.lua
+
+There are over 30 different configuration options in the general settings. I can add any configuration you would like as well. Please just submit a support ticket with your request, and I will see if it's possible.
+
+Errors & Support
+
+If you find any problems with the script, please create a support ticket with details of the situation and a copy/paste of the error in console. I am also not interested in modifying you a custom version of the addon. Also not upon payment. Sorry!
+
+Conflicting addons is not to be said if I will support that or not. This is something I will decide upon confrontation about a conflicting addon. If you have some sort of proof that an addon is conflicting with my addon, please send me a PM with the details you might have.
+
+Thank you!

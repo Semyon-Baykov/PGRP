@@ -1,0 +1,115 @@
+//Arachnit's super duper cool MLG vmt config, donut steal plz. :(
+
+"VertexLitGeneric"
+{
+//Basic
+	"$BaseTexture" 			    "models/arachnit/csgo/weapons/v_models/arms/c_arms/c_arms_csgo_combine/glove_hardknuckle/glove_hardknuckle_colorable"
+	"$BumpMap" 				    "models/arachnit/csgo/weapons/v_models/arms/c_arms/c_arms_csgo_combine/glove_hardknuckle/glove_hardknuckle_normal"
+	"$PhongExponentTexture"     "models/arachnit/csgo/weapons/v_models/arms/c_arms/c_arms_csgo_combine/glove_hardknuckle/glove_hardknuckle_exp"
+
+//Warp
+	"$LightWarpTexture"         "models/arachnit/shared/clothes_wrp2"		//< Change as needed
+//	"$PhongWarpTexture"         "models/arachnit/shared/ctm_specwarp" 		//< Change as needed
+//	"$FresnelRangesTexture"     "models/arachnit/shared/ctm_fresnelwarp"
+	"$WarpIndex"                "0.11"
+	
+//Phong
+	"$Phong"				    "1"
+	"$PhongBoost"               "0.8" 	//< Change as needed
+//	"$PhongExponent"            "1" 	//< $PhongExponent overrides $PhongExponentTexture !!!
+	"$PhongFresnelRanges"	    "[1 1 3]"
+	"$PhongTint" 			    "[0.7 0.8 1]"
+	"$PhongDisableHalflambert"  "0"
+	"$PhongAlbedoTint"          "1"
+	"$PhongAlbedoBoost"         "15"
+//	"$NormalmapAlphaPhongMask"  "0"
+	"$ForcePhong"				"1"
+
+//Rimlight
+	"$Rimlight" 			    "1"
+	"$RimMask" 				    "1"
+	"$RimlightExponent"         "4"
+	"$RimlightBoost"            "1"
+	"$RimlightAlbedo"           "0.6"
+	"$RimlightTint"             "[0.8 1.0 1.2]"
+	"$FakeRimTint"              "[0.5 0.7 1]"
+	"$FakeRimBoost"             "9"
+
+//Environment map / Reflection
+	"$Envmap"                   "env_cubemap"
+	"$EnvmapTint" 			    "[ .01 .01 .02 ]"
+	"$EnvmapLightScale"         "1"
+	"$EnvmapLightScaleMinMax"   "[-.05 1]"
+	"$NormalmapAlphaEnvmapMask" "1"
+
+//Other
+	"$Model"                    "1"
+	"$HalfLambert" 			    "1"
+	"$NoDecal" 				    "0"
+	"$NoLod" 				    "0"
+	"$AmbientOcclusion" 	    "1"
+	"$NoCull" 				    "0"
+//	"$Color2"					"{ 255 255 255 }"	//< RGB colors
+	"$CloakPassEnabled" 		"1" 	//< For SFM and TF2
+	
+//CS:GO&L4D2	
+	"$ShadowSaturation"      	  "0.23"
+	"$ShadowSaturationBounds"	  "[-0.1 0.3 0.4 0.7]"
+	"$ShadowContrast"        	  "0.4"
+	"$ShadowTint"            	  "[0 0.5 1 0.2]"
+	"$AmbientReflectionBoost" 	  "0.035"
+	"$DiffuseExp" 			 	  "1.5"
+
+//Detail
+	"$Detail" 				  	  "models/arachnit/csgo/weapons/customization/shared/paint_wear" 	//< Change as needed
+	"$DetailScale" 			  	  "1"
+	"$DetailBlendFactor" 	  	  "1"
+	"$DetailBlendMode" 		   	  "0"
+
+	// Tinting
+	
+	"$blendtintbybasealpha" "1" 
+ 	"$blendtintcoloroverbase" "0"
+	
+	// "$color2" "{0 0 0}" // Anthracite
+	// "$color2" "{62 88 106}" // Blue (dark)
+	// "$color2" "{59 121 170}" // Blue (fortress)
+	// "$color2" "{182 217 234}" // Blue (sky)
+	// "$color2" "{86 72 60}" // Brown (dark)
+	// "$color2" "{196 162 128}" // Brown (light)
+	// "$color2" "{96 174 140}" // Green (medical)
+	// "$color2" "{128 196 112}" // Green (wildlife)
+	// "$color2" "{255 110 220}" // Purple (candy)
+	// "$color2" "{152 144 226}" // Purple (lavande)
+	// "$color2" "{160 100 140}" // Purple (saints)
+	// "$color2" "{180 52 41}" // Red (fortress)
+	// "$color2" "{242 168 96}" // Red (ocre)
+	// "$color2" "{222 104 78}" // Red (salmon)
+	// "$color2" "{230 186 92}" // Yellow
+	// "$color2" "{248 244 248}" // White
+	
+	// $FixPhongTint "{0.0001 0.0001 0.0001}"
+	
+	Proxies
+	{
+		PlayerColor
+		{
+			resultVar	$color2
+			default		0.2 0.4 0.7
+		}
+		Clamp
+		{
+			min 0.2
+			max 0.5
+			srcVar1 "$color2"
+			resultVar "$phongtint"
+		}
+		Clamp
+		{
+			min 0.01
+			max 1.50
+			srcVar1 "$color2"
+			resultVar "$color2"
+		}
+	}
+}

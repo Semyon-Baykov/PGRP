@@ -1,0 +1,64 @@
+
+vertexLitGeneric
+{
+
+	$baseTexture				models/jessev92/kuma/characters/osama/osamabl_sheet_d
+	$bumpmap					dev/bump_normal
+	$lightwarptexture			models/jessev92/detail/w_gen
+
+	$surfaceprop				carpet
+	$ambientocclusion 			1
+	$halflambert				1
+
+	$phong						1
+	
+	$detail						models/jessev92/detail/cloth2
+	$detailscale				8
+	$detailblendfactor			0.7
+	$detailblendmode			0
+
+	$blendtintbybasealpha		1
+ 	$blendtintcoloroverbase		0
+	$PhongBrightnessScalar		0
+	
+	Proxies
+	{
+		PlayerColor
+		{
+			resultVar	$color2
+			default		0 0 0
+		}
+		Clamp
+		{
+			min 0.0
+			max 0.5
+			srcVar1		$color2
+			resultVar	$color2
+		}
+		Clamp
+		{
+			min 0.0
+			max 0.5
+			srcVar1		$color2
+			resultVar	$phongtint
+		}
+		Equals
+		{     
+			srcVar1		$color2
+			resultVar	$PhongBrightnessScalar
+		}
+		Multiply
+		{
+			srcVar1		$phongtint
+			srcVar2		$phongBrightnessScalar
+			resultVar	$phongtint
+		}
+		Clamp
+		{
+			min 0.0
+			max 0.5
+			srcVar1		$phongtint
+			resultVar	$phongtint
+		}
+	}
+}

@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/shared/nodraw"
+	"$alphatest" "1"
+}

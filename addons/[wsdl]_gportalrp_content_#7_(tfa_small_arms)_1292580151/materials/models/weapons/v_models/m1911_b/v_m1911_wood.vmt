@@ -1,0 +1,29 @@
+//Soldier11 was here. Beware of colleteral damage! Yes, albedotint works just fine in CS:S, but it masking doesn't work too well. Deal with it or not. 
+
+"VertexLitGeneric"
+{
+	$basetexture			"models/weapons/v_models/m1911_b/v_m1911"
+	$bumpmap			"models/weapons/v_models/m1911_b/v_m1911_normal"
+	$phongexponenttexture		"models/weapons/v_models/m1911_b/v_m1911_exponent"
+		
+	"$envmap" 			"env_cubemap"
+
+	"$nocull" 			"1"
+
+	"$normalmapalphaenvmapmask" 	"1"
+	"$normalmapalphaphongmask"    	"1"
+
+	"$envmaptint" 			"[.03 .03 .03]"
+	"$envmapfresnel"		"1"
+	"$envmapFresnelMinMaxExp"	"[0 5 .4]"
+
+	"$phong"     			"1"
+	"$phongboost"   		"0.5"
+	"$phongalbedotint"		"0.3"
+	"$phongfresnelranges"       	"[0.5 0.9 1]"
+
+	"$rimlight" 			"1"
+	"$rimlightexponent" 		"50"	
+	"$rimlightboost"		"0.3"
+	"$rimmask" 			"1"
+}

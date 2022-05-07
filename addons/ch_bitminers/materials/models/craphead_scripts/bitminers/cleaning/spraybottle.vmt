@@ -1,0 +1,14 @@
+VertexLitGeneric
+{
+	$basetexture			"models/craphead_scripts/bitminers/cleaning/spraybottle_albedo"
+	$bumpmap				"models/craphead_scripts/bitminers/cleaning/spraybottle_normal"
+	
+	$phong					1
+	$phongexponent			6
+	$phongboost				1
+	$phongfresnelranges		"[1 0.3 0.1]"
+	$phongtint				"[0.85 1 1]"
+	
+//	$rimlight				1
+//	$rimlightboost			0.131
+}

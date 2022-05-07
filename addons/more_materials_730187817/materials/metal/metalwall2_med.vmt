@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "metal/metalwall2_med"
+	"$surfaceprop" "Metal"
+}

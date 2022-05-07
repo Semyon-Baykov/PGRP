@@ -1,0 +1,20 @@
+"UnlitGeneric"
+{
+	"$basetexture" "meth_screen"
+	$translucent 1
+	$vertexcolor 1
+	$vertexalpha 1
+	$additive 0
+	$alpha 1
+	
+	"Proxies"
+        {
+            "TextureScroll"
+            {
+                "textureScrollVar" "$basetexturetransform"
+                "textureScrollRate" 0.1
+                "textureScrollAngle" -90
+            }
+        }
+		
+}

@@ -1,0 +1,13 @@
+VertexLitGeneric
+{
+	"$basetexture"	"models\weapons\v_models\vintorez\v_vintorez_lense"
+	"$bumpmap" 	"models\weapons\v_models\vintorez\v_vintorez_lense_normal"
+ 	"$envmap" 	"env_cubemap"
+
+	"$translucent" 	"1"
+	"$additive"	"1"
+
+	"$normalmapalphaenvmapmask" 	"1"
+
+	"$halflambert" 			"1"
+}

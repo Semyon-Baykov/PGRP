@@ -1,0 +1,31 @@
+"VertexlitGeneric"
+{
+	"$basetexturetransform" "center .5 .5 scale 3 3  rotate 45 translate 0 0"
+
+	"$basetexture" "models/lonewolfiescars/shared/headliner"
+	"$bumpmap"    "models/lonewolfiescars/shared/headliner_bump"
+
+	"$normalmapalphaenvmapmask" 1
+	"$nodecal" "1"
+
+	"$phong" "1" 
+	"$phongboost" "0.02" 
+	"$phongfresnelranges" "[0.05 0.5 1]" 
+	"$phongexponent" 2
+	"$phongexponenttexture" "models/lonewolfiescars/shared/headliner_detail"
+
+	"$detail" "models/lonewolfiescars/shared/headliner_detail"
+	"$detailscale" "3"
+	"$detailblendfactor" "0.7"
+	"$detailblendmode" "0"
+
+	"$colorfix" "{20 20 20}"
+	"Proxies"
+	{
+		"Equals"
+		{
+			srcVar1 $colorfix
+			resultVar	$color
+		}
+	}
+}

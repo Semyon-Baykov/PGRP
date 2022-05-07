@@ -1,0 +1,10 @@
+VertexLitGeneric
+{
+
+$basetexture   "models\weapons\v_models\hands\sleeve_diff"
+
+$phong 1
+$phongboost 1
+$phongfresnelranges "[1 1 1]"
+
+}

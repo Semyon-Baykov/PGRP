@@ -1,0 +1,14 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/Weapons/V_models/SlaYeR's_SCARH/Mag_Pad"
+	"$bumpmap" "models/Weapons/V_models/SlaYeR's_SCARH/Mag_Pad_N"
+	"$normalmapalphaenvmapmask" "1"
+	"$phong" 		"1"
+	"$phongexponent" 	"16"
+	"$phongboost"   "2.2"
+	"$phongfresnelranges"   "[1 8 4]"
+                "$phongtint"                   "[0.035 0.033 0.05]" 
+	"$rimlight" "1"
+	"$rimlightexponent" "28"	
+	"$rimlightboost" "0.2"
+}

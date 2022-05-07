@@ -1,0 +1,67 @@
+//Arachnit's super duper cool MLG vmt config, donut steal plz. :(
+
+"VertexLitGeneric"
+{
+//Basic
+	"$BaseTexture" 			    "models/arachnit/csgo/weapons/v_models/arms/c_arms/c_arms_csgo_refugee/sleeves_refugee/c_arms_csgo_t_sleeves_refugee"
+	"$BumpMap" 				    "models/arachnit/csgo/weapons/v_models/arms/c_arms/c_arms_csgo_shared/ct_arms_normal"
+//	"$PhongExponentTexture"     "models/arachnit/shared/phong_exp"
+
+//Warp
+	"$LightWarpTexture"         "models/arachnit/shared/clothes_wrp2"		//< Change as needed
+	"$PhongWarpTexture"         "models/arachnit/shared/ctm_specwarp" 		//< Change as needed
+	"$FresnelRangesTexture"     "models/arachnit/shared/ctm_fresnelwarp"
+	"$WarpIndex"                "0.11"
+
+//Phong
+	"$Phong"				    "1"
+	"$PhongBoost"               "1" 	//< Change as needed
+	"$PhongExponent"            "12" 	//< $PhongExponent overrides $PhongExponentTexture !!!
+	"$PhongFresnelRanges"	    "[0.2 0.2 1]"
+	"$PhongTint" 			    "[1 1 1]"
+	"$PhongDisableHalflambert"  "0"
+	"$PhongAlbedoTint"          "1"
+	"$PhongAlbedoBoost"         "3"
+//	"$NormalmapAlphaPhongMask"  "0"
+	"$ForcePhong"				"1"
+
+//Rimlight
+	"$Rimlight" 			    "1"
+	"$RimMask" 				    "1"
+	"$RimlightExponent"         "15"
+	"$RimlightBoost"            "0.2"
+	"$RimlightAlbedo"           "0.6"
+	"$RimlightTint"             "[0.8 1.0 1.2]"
+	"$FakeRimTint"              "[0.5 0.7 1]"
+	"$FakeRimBoost"             "9"
+
+//Environment map / Reflection
+	"$Envmap"                   "env_cubemap"
+	"$EnvmapTint" 			    "[.1 .1 .1]"
+	"$EnvmapLightScale"         "0.18"
+	"$NormalmapAlphaEnvmapMask" "1"
+
+//Other
+	"$Model"                    "1"
+	"$HalfLambert" 			    "1"
+	"$NoDecal" 				    "0"
+	"$NoLod" 				    "0"
+	"$AmbientOcclusion" 	    "1"
+	"$NoCull" 				    "0"
+//	"$Color2"					"{ 255 255 255 }"	//< RGB colors
+	"$CloakPassEnabled" 		"1" 	//< For SFM and TF2
+
+//CS:GO&L4D2
+	"$ShadowSaturation"      	  "0.23"
+	"$ShadowSaturationBounds"	  "[-0.1 0.3 0.4 0.7]"
+	"$ShadowContrast"        	  "0.4"
+	"$ShadowTint"            	  "[0 0.5 1 0.2]"
+	"$AmbientReflectionBoost" 	  "0.07"
+	"$DiffuseExp" 			 	  "1.5"
+
+//Detail
+	"$Detail" 				  	  "models/arachnit/shared/fabricshirtdetail" 	//< Change as needed
+	"$DetailScale" 			  	  "6"
+	"$DetailBlendFactor" 	  	  "3.5"
+	"$DetailBlendMode" 		   	  "0"
+}

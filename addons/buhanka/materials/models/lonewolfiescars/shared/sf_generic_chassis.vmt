@@ -1,0 +1,22 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/shared/sf_generic_chassis"
+	"$bumpmap" "models/lonewolfiescars/shared/skin_nm"
+	"$nocull" 1
+
+	"$phong" 1
+	"$phongexponent" 5
+	"$phongtint" "[0.1 0.1 0.1]"
+	"$phongboost"	0.01
+	"$phongfresnelranges" "[1 1 1]"
+
+	"$colorfix" "{255 255 255}"
+	"Proxies"
+	{
+		"Equals"
+		{
+			srcVar1 $colorfix
+			resultVar	$color
+		}
+	}
+}

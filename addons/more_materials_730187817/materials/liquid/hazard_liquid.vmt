@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "liquid/hazard_liquid"
+	"$surfaceprop" "Slime"
+}

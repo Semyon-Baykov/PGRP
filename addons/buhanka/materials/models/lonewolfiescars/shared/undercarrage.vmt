@@ -1,0 +1,7 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/lonewolfiescars/shared/undercarrage"		
+	"$blendtintbybasealpha" "1"
+    	
+	"$nodecal" "1"
+}

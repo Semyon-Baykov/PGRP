@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "models/craphead_scripts/bitminers/rack/ups_scrn_bg"
+    "$detail" "models/craphead_scripts/bitminers/rack/ups_scrn_text"
+    "$detailscale" "1"
+    "$detailblendmode" "8"
+    "$detailblendfactor" "1"	
+}
