@@ -1,8 +1,0 @@
-"VertexlitGeneric"
-{
-	"$basetexture" "models/craphead_scripts/bitminers/power/generator_glass"
-	"$translucent" 1
-	"$surfaceprop" "glass"
-	"$envmap" "env_cubemap"
-	"$envmaptint" "[.25 .25 .25]"
-}
