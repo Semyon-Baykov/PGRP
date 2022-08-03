@@ -11,4 +11,3 @@ https://steamcommunity.com/id/MoPachE/myworkshopfiles/
 ## Вопросы?
 Добавляйте меня в дискорд и спрашивайте:
 MoPachE#9124
-287723110558466068
